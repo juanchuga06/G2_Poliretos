@@ -25,6 +25,21 @@ public class CadenasCaracteres {
         }        
     }
 
+    public void g2_crearCadenaChar4(String frase, char letraEliminada){ //Fuentes Carlos
+        String fraseSinLetra = "";
+
+        for (int i=0; i<frase.length(); i++){
+            char letraActual = frase.charAt(i);
+            if (letraActual==letraEliminada){
+                fraseSinLetra+=" ";
+            } else {
+                fraseSinLetra+=letraActual;
+            }
+        }
+        System.out.println("Frase elegida: "+frase);
+        System.out.println("Letra a eliminar: "+letraEliminada);
+        System.out.println("Frase sin la letra: "+fraseSinLetra);
+    }
     public void g2_crearCadenaChar5(char frase []){ //Chugá Juan
         System.out.print("Salida: ");
         for(int index = frase.length -1; index >= 0; index--){
@@ -34,6 +49,41 @@ public class CadenasCaracteres {
             System.out.print(frase[index]);
         }
         System.out.println();
+    }
+    public void g2_crearCadenaChar8(){ //Fuentes Carlos
+      // Conjunto de palabras
+      String[] palabras = {"amor", "roma", "raton", "tron", "nora", "aron"};
+        
+      // Seleccionamos una palabra aleatoria del conjunto
+      String palabraSeleccionada = palabras[(int)(Math.random() * palabras.length)];
+      
+      System.out.println("Palabra seleccionada: " + palabraSeleccionada);
+      System.out.print("Ingresa un anagrama de la palabra: ");
+      
+      String anagramaIngresado = scanner.nextLine();
+      
+      if (esAnagrama(palabraSeleccionada, anagramaIngresado)) {
+          System.out.println("¡Correcto! \"" + anagramaIngresado + "\" es un anagrama de \"" + palabraSeleccionada + "\".");
+      } else {
+          System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".");
+      }
+    
+    }
+    public static boolean esAnagrama(String palabra1, String palabra2) {
+        // Comprobamos si las longitudes son diferentes
+        if (palabra1.length() != palabra2.length()) {
+            return false;
+        }
+        
+        // Convertimos las palabras a arreglos de caracteres y los ordenamos
+        char[] arr1 = palabra1.toCharArray();
+        char[] arr2 = palabra2.toCharArray();
+        
+        java.util.Arrays.sort(arr1);
+        java.util.Arrays.sort(arr2);
+        
+        // Comparamos los arreglos ordenados
+        return java.util.Arrays.equals(arr1, arr2);
     }
 
 
