@@ -140,6 +140,9 @@ public class App {
         System.out.print("Ingrese su palabra: ");
         palabra = scanner.nextLine();
         os7.g2_crearAutomata3(palabra); //Chugá Juan
+        System.out.print("Ingrese su palabra: ");
+        palabra = scanner.nextLine();
+        os7.g2_crearAutomata3REPETIDO(palabra); //Chugá Juan
 
         System.out.println("----------------Ejercicios de Arrays------------------");
         Arreglos os8 = new Arreglos();
