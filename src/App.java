@@ -120,7 +120,7 @@ public class App {
 
         System.out.println("----------------Ejercicios de Loading------------------");
         LoadingSecuences os5 = new LoadingSecuences();
-        os5.g2_crearLoadingSecuence1(); //Chugá Juan
+        // os5.g2_crearLoadingSecuence1(); //Chugá Juan
         os5.g2_crearLoadingSecuence7(); //Chugá Juan
         os5.g2_crearLoadingSecuence11();//Chugá Juan
 

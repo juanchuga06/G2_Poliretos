@@ -16,15 +16,15 @@ public class LoadingSecuences {
                 System.out.println();
             }
         }
-        System.out.println();
+        System.out.println("\n¡Carga Completa!\n");
     }
 
     public void g2_crearLoadingSecuence7(){ //Chugá Juan
         char [] caracteres = {'\\', '|', '/','-'};
         int espacios_llenos = 0;
         for(int progress = 0; progress <= 100; progress += 5){
-            System.out.print("[" + "=".repeat(espacios_llenos) + caracteres[espacios_llenos%4] 
-                                 + " ".repeat(20-espacios_llenos) + "] " + progress + "%\r" );
+            System.out.print("[" + "=".repeat(Math.min(espacios_llenos, 19)) + caracteres[espacios_llenos%4] 
+                                 + " ".repeat(19-(espacios_llenos-1)) + "] " + progress + "%\r" );
             try {
                 Thread.sleep(700);
             } catch (InterruptedException e) {
@@ -32,7 +32,7 @@ public class LoadingSecuences {
             }
             espacios_llenos++;
         }
-        System.out.println();
+        System.out.println("\n¡Carga Completa!\n");
     }
 
     public void g2_crearLoadingSecuence11(){ //Chugá Juan

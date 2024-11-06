@@ -42,7 +42,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar7(int tamanio){ //Chugá Juan
-        
         char letra = 97;
         int numero_caracteres;
         for(int posicion = 1; posicion <= tamanio; posicion++) {
@@ -50,6 +49,8 @@ public class SecuenciasCaracteres {
             for(int index = 0; index < numero_caracteres; index++)
                 System.out.print(letra);
             letra++;
+            if(letra == 123)
+                letra = 97;
             System.out.print(" ");
         }
         System.out.println();

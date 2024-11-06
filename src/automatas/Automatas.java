@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Automatas {
     final String alfabetosimple = "a.b.c", alfabinario = "0.1";
     final int R = -10, A = 3, matrizTransicion01[][] = {//   a  b  c  \n any
-                                                            {1, 2, R, R, R},//q0
+                                                                {1, 2, R, R, R},//q0
                                                             {1, 2, R, R, R},//q1
                                                             {R, 2, 3, R, R},//q2
                                                             {R, R, R, A, R}//q3
