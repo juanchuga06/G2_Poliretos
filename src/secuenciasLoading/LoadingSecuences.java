@@ -1,6 +1,9 @@
 package secuenciasLoading;
 
+import java.util.Scanner;
+
 public class LoadingSecuences {
+    Scanner leer = new Scanner(System.in);
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -19,6 +22,66 @@ public class LoadingSecuences {
         System.out.println();
     }
 
+    public void g2_crearLoadingL03(char caracter) {
+        int longitudBarra = 20;
+        boolean haciaDerecha = true;
+        int posicion = 0;
+    
+        for (int porcentaje = 0; porcentaje <= 100; porcentaje ++) {
+            StringBuilder barra = new StringBuilder(" ".repeat(longitudBarra));
+    
+            barra.setCharAt(posicion, caracter);
+    
+            System.out.print("\r[" + barra + "] " + porcentaje + "%");
+    
+            if (haciaDerecha) {
+                posicion++;
+                if (posicion == longitudBarra - 1) {
+                    haciaDerecha = false;
+                }
+            } else {
+                posicion--;
+                if (posicion == 0) {
+                    haciaDerecha = true;
+                }
+            }
+    
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                System.out.println("Retraso completado ");
+            }
+        }
+        System.out.print("\r[" + "                   " + caracter + "] " + "100" + "%");
+        System.out.println("\nCarga completada!");
+    }
+
+    public void g2_crearLoadingL05(){
+        int longitudBarra = 20;
+        for (int barraprogreso = 1; barraprogreso <= longitudBarra; barraprogreso++) {
+            int porcentaje = (barraprogreso * 100) / longitudBarra;
+            StringBuilder barra = new StringBuilder();
+
+            for (int avance = 0; avance < longitudBarra; avance++) {
+                if (avance < barraprogreso - 1) {
+                    barra.append("=");
+                } else if (avance == barraprogreso - 1) {
+                    barra.append(barraprogreso % 2 == 0 ? ">" : "-");
+                } else {
+                    barra.append(" ");
+                }
+            }
+
+            System.out.print("\r[" + barra + "] " + porcentaje + "%");
+            try{
+                Thread.sleep(400); 
+                }catch(InterruptedException e){
+                   System.out.println("Retraso completado ");
+                }
+        }
+        System.out.println("\n¡Carga completa!");
+    }
+
     public void g2_crearLoadingSecuence7(){ //Chugá Juan
         char [] caracteres = {'\\', '|', '/','-'};
         int espacios_llenos = 0;
@@ -34,6 +97,31 @@ public class LoadingSecuences {
         }
         System.out.println();
     }
+
+    public void g2_crearLoadingL08(String digito){
+        int longitudFija = 20; 
+        int longitud = digito.length();
+        for (int barracarga = 1; barracarga <= longitud; barracarga++) {
+            int porcentaje = (barracarga * 100) / longitud;
+    
+            StringBuilder barra = new StringBuilder();
+    
+            for (int avance = 0; avance < longitudFija; avance++) {
+                if (avance < barracarga && avance < longitud) {
+                    barra.append(digito.charAt(avance));
+                } else {
+                    barra.append(" ");
+                }
+            }
+            System.out.print("\r[" + barra + "] " + porcentaje + "%");
+            
+            try {
+                Thread.sleep(400);
+            } catch (InterruptedException e) {
+                System.out.println("Retraso completado ");
+            }
+        }
+}
 
     public void g2_crearLoadingSecuence11(){ //Chugá Juan
         int valor_maximo = 10, valor_minimo = 0, tamanio = 50;
