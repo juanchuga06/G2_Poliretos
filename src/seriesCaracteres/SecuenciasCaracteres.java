@@ -16,35 +16,28 @@ public class SecuenciasCaracteres {
         System.out.println();
     }
 
-    public void g2_crearSeriecaractereS3(int valor){
+    public void g2_crearSeriecaractere3(int valor){ //Mayerli Chavez
         System.out.println("");
-        if( valor > 0){
-                System.out.println("La operacion es: ");
-                for (int i = 2; i <= valor; i++) {
-                    int contador = 2;
-                    boolean primo= true;
-                    while(primo && contador < i){
-                        if((i % contador) == 0){
-                            primo = false;
-                        }
-                        else{
-                            contador ++;
-                        }
-                    }
-                    if (primo){
-                        int indicedelmas = 1;
-                        while (indicedelmas <= i){
-                            System.out.print("+");
-                            indicedelmas ++;
-                        }
-                        System.out.print("  ");
-                    }
+        System.out.println("La operacion es: ");
+        for (int i = 2; i <= valor; i++) {
+            int contador = 2;
+            boolean primo= true;
+            while(primo && contador < i){
+                if((i % contador) == 0){
+                    primo = false;
                 }
-        }else{
-            System.out.print("Ingreso invalido!!!");
-            System.out.print("porfavor ingrese un nuevo rango:");
-            valor= leer.nextInt();
-            g2_crearSeriecaractereS3(valor);
+                else{
+                    contador ++;
+                }
+            }
+            if (primo){
+                int indicedelmas = 1;
+                while (indicedelmas <= i){
+                    System.out.print("+");
+                    indicedelmas ++;
+                }
+                System.out.print("  ");
+            }
         }
      System.out.println(" ");
     }
@@ -73,28 +66,21 @@ public class SecuenciasCaracteres {
         System.out.println();
     }
 
-    public void g2_crearSeriecaractereS8(int valor){
+    public void g2_crearSeriecaractere8(int valor){ //Mayerli Chavez
         System.out.println("");
-        if(valor > 0){
-                System.out.println("La operacion es: ");
-                
-                int numeroletra = 97;
-                for (int i = 1; i <= valor; i+=2){
-                    int indiceserie = 1;
-                    while (indiceserie <= i){
-                        System.out.print((char)(numeroletra));
-                        indiceserie ++;
-                    }
-                    System.out.print("  ");
-                    numeroletra ++;
-                }
-            }else{
-                System.out.print("Ingreso invalido!!!");
-                System.out.print("porfavor ingrese un nuevo rango:");
-                valor= leer.nextInt();
-                g2_crearSeriecaractereS8(valor);
+        System.out.println("La operacion es: ");
+        
+        int numeroletra = 97;
+        for (int i = 1; i <= valor; i++) {
+            int indiceserie = 1;
+            while (indiceserie <= i * 2 - 1) {
+                System.out.print((char) numeroletra);
+                indiceserie++;
             }
-        System.out.println(" ");
+            System.out.print("  ");
+            numeroletra++;
+        }
+        System.out.println();
     }
     
 }

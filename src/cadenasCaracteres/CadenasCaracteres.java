@@ -6,8 +6,7 @@ public class CadenasCaracteres {
     Scanner scanner = new Scanner(System.in);
     Scanner leer = new Scanner(System.in);
 
-    public void g2_crearCadenaCaracteresC02(String frase){
-        
+    public void g2_crearCadenaCaracteres2(String frase){ //Mayerli Chavez
         int contador_letra =0;
         for(char c: frase.toCharArray()){
             if(Character.isLetter(c) && !esVocal1(c)){
@@ -15,9 +14,8 @@ public class CadenasCaracteres {
             }
         }
         System.out.println("La frase ingresada tiene " + contador_letra + " letras.");
-
-    System.out.println(" ");
-}
+        System.out.println(" ");
+    }
     public  static boolean esVocal1(char c){
         c = Character.toLowerCase(c);
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
@@ -54,7 +52,7 @@ public class CadenasCaracteres {
         System.out.println();
     }
 
-    public void g2_crearCadenaCaracteresC06(String frase){
+    public void g2_crearCadenaCaracteres6(String frase){ //Mayerli Chavez
         StringBuilder letraFrase = new StringBuilder();
         String nuevafrase = "";
         for (char c : frase.toCharArray()) {
@@ -73,7 +71,7 @@ public class CadenasCaracteres {
         System.out.println(" ");
     }
 
-    public void g2_crearCadenaCaracteresC07(String frase){
+    public void g2_crearCadenaCaracteres7(String frase){ //Mayerli Chavez
         String fraseModificada = frase.toUpperCase().replace("J", "");
         System.out.print("La nueva frase es: " + fraseModificada);
         System.out.println(" ");

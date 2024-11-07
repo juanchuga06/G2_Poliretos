@@ -2,17 +2,17 @@ package recursividad;
 
 public class Recursivo {
 
-    public static int g2_crearRecursionR01(int dato){
+    public int g2_crearRecursion1(int dato){ //Mayerli Chavez
         int factorial;
         if(dato == 0 || dato == 1){
             factorial =1;
         }else{
-            factorial = dato * g2_crearRecursionR01(dato - 1);
+            factorial = dato * g2_crearRecursion1(dato - 1);
         }
         return factorial;
     }
 
-    public static int g2_crearRecursionR04(int base, int potencia){
+    public int g2_crearRecursion4(int base, int potencia){ //Mayerli Chavez
         int resultado;
         if( base == 0){
          resultado = 0;
@@ -21,7 +21,7 @@ public class Recursivo {
                 resultado = 1;
             }else{
                     if(potencia !=1){
-                        resultado= base * g2_crearRecursionR04(base, (potencia - 1));
+                        resultado= base * g2_crearRecursion4(base, (potencia - 1));
                     }else{
                         resultado= base;
                     }
