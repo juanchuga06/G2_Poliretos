@@ -38,43 +38,22 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-    public void g2_crearSerienumericaS4(int rango){
-        System.out.println("");
-        if(rango > 0){
-                System.out.println("La operacion es: ");
-                int primerdigito = 0, segundodigito = 0, repositorio = 0, numero2 = 2;
-                while(numero2 <= 4){
-                    switch (numero2) {
-                        case 2:
-                            System.out.print( primerdigito + "/" + numero2);
-                            System.out.print("  ");
-                            numero2+=2;
-                            primerdigito++;
-                            break;
-                        default:
-                            System.out.print( primerdigito + "/" + numero2);
-                            System.out.print("  ");
-                            numero2+=2;
-                            break;
-                    }
-                }
+public void g2_crearSerienumericaS4(int rango) {
+    StringBuilder resultado = new StringBuilder("La operacion es: \n");
 
-                for (int i = 1 ; i <= rango ; i++){
-                        repositorio= primerdigito + segundodigito;
-                        System.out.print( repositorio + "/" + numero2);
-                        System.out.print("  ");
-                        numero2+=2;
-                        segundodigito = primerdigito;
-                        primerdigito = repositorio;
-                }
-        }else{
-            System.out.print("Ingreso invalido!!!");
-            System.out.print("porfavor ingrese un nuevo rango:");
-              rango= leer.nextInt();
-              g2_crearSerienumericaS4(rango);
-        }
-        System.out.println("");
+    int primerdigito = 0, segundodigito = 0, numero2 = 2;
+
+    for (int i = 0; i < rango; i++) {
+        resultado.append(primerdigito).append("/").append(numero2).append("  ");
+        numero2 += 2;
+
+        int repositorio = primerdigito + segundodigito;
+        segundodigito = primerdigito;
+        primerdigito = repositorio;
     }
+
+    System.out.println(resultado);
+}
 
     public void g2_crearSerieNum5(int tamanio){ //Chugá Juan
         int num0 = 2, i = 0;
