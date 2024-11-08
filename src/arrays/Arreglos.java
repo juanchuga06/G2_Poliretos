@@ -5,30 +5,24 @@ import java.util.Scanner;
 public class Arreglos {
     Scanner leer = new Scanner(System.in);
 
-    public void g2_crearArraysA03(String nombre){
+    public void g2_crearArrays3(String nombre){ 
         int longitud = nombre.length();
         int altura= 2 * (longitud);
-
         for (int ejey = altura; ejey >= 0; ejey--) {
             System.out.printf("%2d |", ejey);
-
-            boolean letraImpreso = false;
             for (int ejex = 0; ejex < longitud; ejex++) {
-                if (2 * ejex == ejey - 1) {
-                    System.out.print("  "+nombre.charAt(ejex) + "  ");
-                    letraImpreso = true;
-                } else {
+                if (2 * ejex == ejey - 2 && ejey != 0) {
+                    System.out.print("  " + nombre.charAt(ejex) + "  ");
+                } else  if(ejey == 0){
+                        System.out.print("__");
+                } 
+                else {
                     System.out.print("  ");
                 }
             }
             System.out.println();
         }
-        System.out.print("   | ");
-        for (int x = 0; x < longitud; x++) {
-            System.out.print("__");
-        }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
     }
 
     public void g2_crearArreglo5(String nombre_completo){ //Chugá Juan

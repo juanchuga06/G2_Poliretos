@@ -22,18 +22,20 @@ public class LoadingSecuences {
         System.out.println();
     }
 
-    public void g2_crearLoadingL03(char caracter) {
+    public void g2_crearLoading3(char caracter) { //Mayerli Chavez
         int longitudBarra = 20;
         boolean haciaDerecha = true;
         int posicion = 0;
-    
-        for (int porcentaje = 0; porcentaje <= 100; porcentaje ++) {
+        System.out.print("[                    ] " + "0%\r");
+        for (int porcentaje = 1; porcentaje <= 100; porcentaje ++) {
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                System.out.println("Retraso completado ");
+            }
             StringBuilder barra = new StringBuilder(" ".repeat(longitudBarra));
-    
             barra.setCharAt(posicion, caracter);
-    
             System.out.print("\r[" + barra + "] " + porcentaje + "%");
-    
             if (haciaDerecha) {
                 posicion++;
                 if (posicion == longitudBarra - 1) {
@@ -45,18 +47,11 @@ public class LoadingSecuences {
                     haciaDerecha = true;
                 }
             }
-    
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                System.out.println("Retraso completado ");
-            }
         }
-        System.out.print("\r[" + "                   " + caracter + "] " + "100" + "%");
         System.out.println("\nCarga completada!");
     }
 
-    public void g2_crearLoadingL05(){
+    public void g2_crearLoading5(){ //Mayerli Chavez
         int longitudBarra = 20;
         for (int barraprogreso = 1; barraprogreso <= longitudBarra; barraprogreso++) {
             int porcentaje = (barraprogreso * 100) / longitudBarra;
@@ -66,7 +61,7 @@ public class LoadingSecuences {
                 if (avance < barraprogreso - 1) {
                     barra.append("=");
                 } else if (avance == barraprogreso - 1) {
-                    barra.append(barraprogreso % 2 == 0 ? ">" : "-");
+                    barra.append(barraprogreso % 2 == 0 ? "-" : ">");
                 } else {
                     barra.append(" ");
                 }
@@ -121,7 +116,8 @@ public class LoadingSecuences {
                 System.out.println("Retraso completado ");
             }
         }
-}
+        System.out.println();
+    }
 
     public void g2_crearLoadingSecuence11(){ //Chugá Juan
         int valor_maximo = 10, valor_minimo = 0, tamanio = 50;
