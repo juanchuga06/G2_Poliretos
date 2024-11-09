@@ -40,6 +40,40 @@ public class SecuenciasCaracteres {
         }
         System.out.println();
     }
+    public void g2_crearSerieChar6(char letraFinal){ //Fuentes Carlos
+
+        if (letraFinal < 'a' || letraFinal > 'z') {
+            System.out.println("Por favor, ingrese una letra válida entre 'a' y 'z'.");
+            return;
+        }
+
+        
+        char letraActual = 'a';
+        boolean esSuma = true; 
+        int contador = 0; 
+
+        while (letraActual <= letraFinal) {
+          
+            if (contador % 2 == 0) {
+                System.out.print(letraActual);
+            } else {
+                
+                if (esSuma) {
+                    System.out.print(" + ");
+                } else {
+                    System.out.print(" - ");
+                }
+               
+                esSuma = !esSuma;
+            }
+
+            
+            contador++;
+            letraActual ++; 
+        }
+
+        System.out.println();
+    }
 
     public void g2_crearSerieChar7(int tamanio){ //Chugá Juan
         

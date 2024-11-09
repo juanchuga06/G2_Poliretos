@@ -50,11 +50,12 @@ public class CadenasCaracteres {
         }
         System.out.println();
     }
+    
     public void g2_crearCadenaChar8(){ //Fuentes Carlos
       // Conjunto de palabras
       String[] palabras = {"amor", "roma", "raton", "tron", "nora", "aron"};
         
-      // Seleccionamos una palabra aleatoria del conjunto
+      
       String palabraSeleccionada = palabras[(int)(Math.random() * palabras.length)];
       
       System.out.println("Palabra seleccionada: " + palabraSeleccionada);
@@ -70,19 +71,17 @@ public class CadenasCaracteres {
     
     }
     public static boolean esAnagrama(String palabra1, String palabra2) {
-        // Comprobamos si las longitudes son diferentes
+        
         if (palabra1.length() != palabra2.length()) {
             return false;
         }
         
-        // Convertimos las palabras a arreglos de caracteres y los ordenamos
         char[] arr1 = palabra1.toCharArray();
         char[] arr2 = palabra2.toCharArray();
         
         java.util.Arrays.sort(arr1);
         java.util.Arrays.sort(arr2);
         
-        // Comparamos los arreglos ordenados
         return java.util.Arrays.equals(arr1, arr2);
     }
 
