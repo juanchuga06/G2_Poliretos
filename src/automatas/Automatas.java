@@ -203,7 +203,6 @@ public class Automatas {
         }
     }
 
-
     public int g2_cambiarCaracter(char c){ //ANTHONY GAMBOA
         switch (c) {
             case 'a':
@@ -301,7 +300,7 @@ public class Automatas {
     }
 
     public void g2_imprimirAutomata2(Scanner sc) {
-        System.out.println("Ingrese una palabra con a b c a");
+        System.out.print("Ingrese una palabra con a b c (ab+ca): ");
         String automata1 = sc.next();
         int resultado = g2_llamarAutomata2(automata1);
         if (resultado == 2) {

@@ -20,6 +20,18 @@ public class Recursivo {
         return g2_crearRecursion2(a + 1, b -1);
     }
 
+    public void g2_crearRecursion3(int numA, int numB){ //Fuentes Carlos
+        int resultado = multiplicar(numA, numB);
+        System.out.printf("La multiplicación de %d y %d es: %d%n", numA, numB, resultado);
+    }
+    public static int multiplicar(int a, int b){
+
+        if (b == 0) {
+            return 0;
+        }
+        return a + multiplicar(a, b - 1);
+    }
+    
     public int g2_crearRecursion4(int base, int potencia){ //Mayerli Chavez
         int resultado;
         if( base == 0){
@@ -67,5 +79,6 @@ public class Recursivo {
             System.out.println("Se interrumpio la espera");
         }
         g2_crearRecursion6(cont - 1);
+
     }
 }

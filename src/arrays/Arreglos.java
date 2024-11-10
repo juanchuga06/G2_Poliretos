@@ -4,6 +4,57 @@ import java.util.Scanner;
 
 public class Arreglos {
 
+    public void g2_crearArreglo1(double porcentaje1, double porcentaje2, double porcentaje3, double porcentaje4){ //Fuentes Carlos
+        double[] porcentajes = {porcentaje1, porcentaje2, porcentaje3, porcentaje4};
+        String[] nombreCompleto = {"CARLOS", "DANIEL", "FUENTES", "PROANO"};
+        int barraLongitud = 15;
+
+        for (int i = 0; i < nombreCompleto.length; i++) {
+            int CargaNombreCompleto = (int) Math.ceil((nombreCompleto[i].length() * porcentajes[i]) / 100.0);
+            StringBuilder barra = new StringBuilder();
+            int progresoActual = (int) ((porcentajes[i] / 100.0) * barraLongitud);
+
+            barra.append("[");
+            for (int j = 0; j < barraLongitud; j++) {
+                if (j < progresoActual) {
+                    barra.append("=");
+                } else {
+                    barra.append(" ");
+                }
+            }
+            barra.append("] ").append(String.format("%3d", (int) porcentajes[i])).append("% ");
+            barra.append(nombreCompleto[i].substring(0, CargaNombreCompleto));
+
+            System.out.println(barra.toString());
+        }
+    }
+    
+    public void g2_crearArreglo2(int tamaño, char caracter){ //Fuentes Carlos
+        System.out.println(" ");
+        //mi nombre es Carlos Fuentes, por lo tanto se imprimira la C y la F
+        for (int i = 0; i < tamaño; i++) {
+            //imprimir "C"
+            for (int j = 0; j < tamaño; j++) {
+                if (j == 0 || (i == 0 && j < tamaño) || (i == tamaño - 1 && j < tamaño)) {
+                    System.out.print(caracter);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("   "); //Espaciado
+
+            // Imprimir "F"
+            for (int j = 0; j < tamaño; j++) {
+                if (j == 0 || (i == 0 && j < tamaño) || (i == tamaño / 2 && j < tamaño)) {
+                    System.out.print(caracter);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public void g2_crearArreglo3(String nombre){ //Chavez Mayerli
         int longitud = nombre.length();
         int altura= 2 * (longitud);
@@ -40,7 +91,7 @@ public class Arreglos {
             System.out.println();
         }
     }
-
+    
     public void g2_crearArreglo5(String nombre_completo){ //Chugá Juan
         String [] nombres = new String[4];
         Scanner scanlinea = new Scanner(nombre_completo).useDelimiter(" ");

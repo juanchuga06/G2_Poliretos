@@ -13,20 +13,10 @@ import java.util.Scanner;
 public class App {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        int rango;
-        int valor;
-        int tamanio;
-        int datos;
-        int base;
-        int potencia;
-        char caracter;
-        String digito;
-        String entrada;
-        String entrada2;
-        String palabra;
-        String frase;
-        char caracterCf = '+';
-        char letraAEliminar;
+        int rango, valor, tamanio, numA, numB, datos, base, potencia;
+        char caracter, caracterCf, letraAEliminar;
+        String digito, entrada, entrada2, palabra, frase;
+        double porcent1, porcent2, porcent3, porcent4;
 
         System.out.println("POLIRETOS -  GRUPO 2 - Paralelo GR2SW");
         System.out.println("Integrantes:\nChavez.Mayerli\nChuga.Juan\nFuentes.Carlos\nGamboa.Anthony\n");
@@ -67,8 +57,8 @@ public class App {
         os1.g2_crearSerieNum8(tamanio); //Anthony Gamboa
         
         System.out.print("S9:   Ingrese el rango de la operacion a realizar: ");
-        rango = Validadores.validarIngresoEnteros(scanner);//Secuencia 9
-        os1.g2_crearSerieNum9(rango);
+        rango = Validadores.validarIngresoEnteros(scanner);
+        os1.g2_crearSerieNum9(rango); //ChavezMayerli
 
         System.out.print("S10:   Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -90,8 +80,8 @@ public class App {
         os2.g2_crearSerieChar2(tamanio, caracterCf); //Fuentes Carlos
 
         System.out.print("SC3:  Ingrese el rango de la operacion a realizar: ");
-        valor= Validadores.validarIngresoEnteros(scanner); //caracter3
-        os2.g2_crearSerieChar3(valor);
+        valor= Validadores.validarIngresoEnteros(scanner); 
+        os2.g2_crearSerieChar3(valor); //ChavezMayerli
 
         System.out.print("SC4:  Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -103,15 +93,19 @@ public class App {
 
         System.out.print("SC6:  Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
-        os2.g2_crearSerieChar6(tamanio); //Anthony Gamboa
+        os2.g2_crearSerieChar6(tamanio); 
+
+        System.out.print("SC6Repetido:  Ingrese la letra que finalizara la serie: ");
+        caracterCf = Validadores.validarIngresoCaracteres(scanner);
+        os2.g2_crearSerieChar6Repetido(caracterCf); //Fuentes Carlos
 
         System.out.print("SC7:  Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
         os2.g2_crearSerieChar7(tamanio); //Chugá Juan
 
         System.out.print("SC8:  Ingrese el rango de la operacion a realizar: ");
-        valor= Validadores.validarIngresoEnteros(scanner); //Caracter 8
-        os2.g2_crearSerieChar8(valor);
+        valor = Validadores.validarIngresoEnteros(scanner); 
+        os2.g2_crearSerieChar8(valor); //ChavezMayerli
 
         System.out.print("SC9:  Ingrese la letra que finalizara la serie: ");
         caracterCf=Validadores.validarIngresoCaracteres(scanner);
@@ -138,16 +132,16 @@ public class App {
         os3.g2_crearFigura4(tamanio); //Fuentes Carlos
 
         System.out.print("F5:   Ingrese el tamanio de la figura: ");
-        tamanio= Validadores.validarIngresoEnteros(scanner);// caracter 5
-        os3.g2_crearFigura5(tamanio);
+        tamanio= Validadores.validarIngresoEnteros(scanner);
+        os3.g2_crearFigura5(tamanio); //ChavezMayerli
 
         System.out.print("F6:   Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
         os3.g2_crearFigura6(tamanio); //Anthony Gamboa
 
         System.out.print("F7:Ingrese el tamanio de la figura: ");
-        tamanio= Validadores.validarIngresoEnteros(scanner);// caracter 7
-        os3.g2_crearFigura7(tamanio);
+        tamanio= Validadores.validarIngresoEnteros(scanner);
+        os3.g2_crearFigura7(tamanio); //ChavezMayerli
         
         System.out.print("F8:   Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -166,13 +160,12 @@ public class App {
         os3.g2_crearFigura11(tamanio); //Fuentes Carlos
 
         System.out.print("F12:  Ingrese el tamanio de la figura: ");
-        tamanio= Validadores.validarIngresoEnteros(scanner);// figura 12
-        os3.g2_crearFigura12(tamanio);
+        tamanio= Validadores.validarIngresoEnteros(scanner);
+        os3.g2_crearFigura12(tamanio); //ChavezMayerli
 
         System.out.print("F13:  Ingrese el tamanio de la figura: ");
         tamanio= Validadores.validarIngresoEnteros(scanner);
-        os3.g2_crearFigura13(tamanio);
-        scanner.nextLine();
+        os3.g2_crearFigura13(tamanio); //ChavezMayerli
 
         System.out.print("F14:  Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -205,36 +198,36 @@ public class App {
         System.out.print("CC1:  Ingrese una frase: "); 
         String frase12 = scanner.nextLine();
         int vocalCont = os4.g2_crearCadenaChar1(frase12);
-        System.out.println("La frase tiene " + vocalCont + " vocales"); //Anthony Gamboa
+        System.out.println("La frase tiene " + vocalCont + " vocales,"); //Anthony Gamboa
 
         System.out.print("CC2:  Introduce una frase: ");
-        frase = scanner.nextLine(); //caracteres2
-        os4.g2_crearCadenaChar2(frase);
+        frase = scanner.nextLine(); 
+        os4.g2_crearCadenaChar2(frase); //ChavezMayerli
 
         System.out.print("CC3:  Ingrese una frase de su preferencia: ");
         frase = scanner.nextLine();        
         System.out.print("Ingrese una vocal (a,e,i,o,u): ");
-        char vocal = (scanner.nextLine().toLowerCase().charAt(0)); //caracter 3
+        char vocal = (scanner.nextLine().toLowerCase().charAt(0)); 
         os4.g2_crearCadenaChar3(frase, vocal); //Chugá Juan
 
-        System.out.print("CC4:  Ingresa una frase:");
+        System.out.print("CC4:  Ingresa una frase: ");
         frase = scanner.nextLine();
-        System.out.print("Ingresa una letra a eliminar:");
+        System.out.print("Ingresa una letra a eliminar: ");
         letraAEliminar = Validadores.validarIngresoLetra(scanner);
         os4.g2_crearCadenaChar4(frase, letraAEliminar);
         System.out.println("");
 
         System.out.print("CC5:  Ingrese una frase de su preferencia: ");
-        char linea [] = scanner.nextLine().toCharArray(); //caracter 5
+        char linea [] = scanner.nextLine().toCharArray(); 
         os4.g2_crearCadenaChar5(linea); //Chugá Juan
 
-        System.out.print("CC6:  Introduce una frase: ");//caracteres 6
+        System.out.print("CC6:  Introduce una frase: ");
         frase= scanner.nextLine();
-        os4.g2_crearCadenaChar6(frase);
+        os4.g2_crearCadenaChar6(frase); //ChavezMayerli
 
-        System.out.print("CC7:  Introduce una frase: ");// caracteres7
+        System.out.print("CC7:  Introduce una frase: ");
         frase= scanner.nextLine();
-        os4.g2_crearCadenaChar7(frase);
+        os4.g2_crearCadenaChar7(frase); //ChavezMayerli
         
         //anagrama de palabras Fuentes Carlos
         System.out.println("CC8:");
@@ -255,33 +248,33 @@ public class App {
         os5.g2_crearLoadingSecuence2(caracterP, 20);
         scanner.nextLine();  //Anthony Gamboa
 
-
-        System.out.print("L3:   Introduce el carácter para la barra de carga: ");//loading3
+        System.out.print("L3:   Introduce el carácter para la barra de carga: ");
         caracter = Validadores.validarIngresoCaracteres(scanner);
-        os5.g2_crearLoadingSecuence3(caracter);
+        os5.g2_crearLoadingSecuence3(caracter); //ChavezMayerli
 
-        System.out.println("L4: Ingrese la duracion: ");
-        int duracion = scanner.nextInt();
-        os5.g2_crearLoadingSecuence4(duracion); //Anthony Gamboa
-        scanner.nextLine(); 
+        System.out.print("L4: Ingrese la duracion total de cada porcentaje: ");
+        int duracion =  Validadores.validarIngresoEnteros(scanner);
+        os5.g2_crearLoadingSecuence4(duracion); //Anthony Gamboa 
 
-        System.out.println( "L05: ");//loading 5
-        os5.g2_crearLoadingSecuence5();
-        scanner.nextLine();
+        System.out.println( "L05: ");
+        os5.g2_crearLoadingSecuence5(); //ChavezMayerli
 
-        // L6
+        System.out.println("L6: ");
+        os5.g2_crearLoadingSecuence6(20,"<=>"); //Fuentes Carlos
         
         System.out.println("L7: ");
         os5.g2_crearLoadingSecuence7(); //Chugá Juan
-        scanner.nextLine();
-
 
         System.out.print("L8: Ingrese su nombre y apellido (con espacios): ");
-        digito = scanner.nextLine().replace(" ", "");//loading8
-        os5.g2_crearLoadingSecuence8(digito);
+        digito = scanner.nextLine().replace(" ", "");
+        os5.g2_crearLoadingSecuence8(digito); //ChavezMayerli
 
-        // L9:
-        // L10:
+        System.out.println("L9: Ingrese su nombre y apellido:");
+        String nombre = scanner.nextLine();
+        os5.g2_crearLoadingSecuence9(nombre); //Fuentes Carlos
+
+        System.out.println("L10:");
+        os5.g2_crearLoadingSecuence10();//Fuentes Carlos
 
         System.out.println("L11:");
         os5.g2_crearLoadingSecuence11();//Chugá Juan
@@ -295,43 +288,47 @@ public class App {
         os5.g2_crearLoadingSecuence12(duracion1); //Anthony Gamboa
         scanner.nextLine();
 
+
         System.out.println("----------------Ejercicios de Recursividad------------------");
         Recursivo os6 = new Recursivo();
 
         System.out.print("R1:   Ingrese el numero que desea conocer su factorial: ");
-        datos = Validadores.validarIngresoEnteros(scanner);
+        datos = Validadores.validarIngresoEnterosYCero(scanner);
         int factorial = os6.g2_crearRecursion1(datos);
-        System.out.print("El factorial del numero es: " + factorial);
+        System.out.println("El factorial del numero es: " + factorial); //Chavez Mayerli
 
         System.out.print("R2:\nIngrese el primer sumando: ");
-        int a = Validadores.validarIngresoEnteros(scanner);
+        int a = Validadores.validarIngresoEnterosYCero(scanner);
         System.out.print("Ingrese el segundo sumando: ");
-        int b = Validadores.validarIngresoEnteros(scanner);
+        int b = Validadores.validarIngresoEnterosYCero(scanner);
         int resultado = os6.g2_crearRecursion2(a, b);
         System.out.println("La suma es: " + resultado); //Anthony Gamboa
  
-        // R3
+        System.out.print("R3:\nIngrese el primer numero a multiplicar: ");
+        numA =  Validadores.validarIngresoEnterosYCero(scanner);
+        System.out.print("Ingrese el segundo numero a multiplicar: ");
+        numB =  Validadores.validarIngresoEnterosYCero(scanner);
+        os6.g2_crearRecursion3(numA,numB); //Fuentes Carlos
 
         System.out.print("R4:\nIngrese la base de la potencia: ");
-        base = Validadores.validarIngresoEnteros(scanner);
+        base =  Validadores.validarIngresoEnterosYCero(scanner);
         System.out.print("Ingrese el exponenete de la potencia: ");
-        potencia = Validadores.validarIngresoEnteros(scanner);
-        resultado = os6.g2_crearRecursion4(base, potencia);
+        potencia = Validadores.validarIngresoEnterosYCero(scanner);;
+        resultado = os6.g2_crearRecursion4(base, potencia); //Chavez Mayerli
         System.out.print("La potencia del numero ingresado es: " + resultado);
         System.out.println(" ");
         scanner.nextLine();
 
         System.out.print("R5:   Ingrese el limite superior de la cuenta: ");
-        int limite_superior = Validadores.validarIngresoEnteros(scanner);
-        os6.g2_crearRecursion5(0, limite_superior); //Chugá Juan 5
+        int limite_superior = Validadores.validarIngresoEnterosYCero(scanner);
+        os6.g2_crearRecursion5(0, limite_superior); //Chugá Juan 
 
         System.out.println("R6: Ingrese el liimite superior de la cuenta progresiva: ");
-        int cont = Validadores.validarIngresoEnteros(scanner);
+        int cont =  Validadores.validarIngresoEnterosYCero(scanner);
         os6.g2_crearRecursion6(cont); //Anthony Gamboa
 
 
-        
-        System.out.println("----------------Ejercicios de Automatas------------------");
+        System.out.println("\n----------------Ejercicios de Automatas------------------");
         Automatas os7 = new Automatas();
 
         System.out.print("A1: Ingrese su palabra (a*b+c): ");
@@ -350,13 +347,13 @@ public class App {
         palabra = scanner.nextLine();
         os7.g2_crearAutomata3REPETIDO(palabra); //Chugá Juan
 
-        System.out.print("A4:  Ingrese un numero (Verficador de numero decimal): ");
+        System.out.print("A4:  Ingrese un numero (Verficador de numero decimal, con punto): ");
         entrada = scanner.nextLine().trim();
-        os7.g2_crearAutomata4(entrada);
+        os7.g2_crearAutomata4(entrada); //Chavez Mayerli
 
         System.out.print("A5:   Ingrese el nombre de una variable: ");
         entrada2 = scanner.nextLine();
-        os7.g2_crearAutomata5(entrada2);
+        os7.g2_crearAutomata5(entrada2); //Chavez Mayerli
 
         //A6:
 
@@ -372,12 +369,22 @@ public class App {
         System.out.println("----------------Ejercicios de Arrays------------------");
         Arreglos os8 = new Arreglos();
 
-        // Arr1
-        // Arr2
+        System.out.println("ARR1:  Ingrese 4 porcentajes (separados por espacios): ");
+        porcent1 = Validadores.validarIngresoDouble(scanner);
+        porcent2 = Validadores.validarIngresoDouble(scanner);
+        porcent3 = Validadores.validarIngresoDouble(scanner);
+        porcent4 = Validadores.validarIngresoDouble(scanner);
+        os8.g2_crearArreglo1(porcent1, porcent2, porcent3, porcent4); //Fuentes Carlos
+
+        System.out.println("ARR2:\nIngrese el tamaño para las iniciales: ");
+        tamanio = Validadores.validarIngresoEnteros(scanner); 
+        System.out.println("Ingrese el caracter con el que se dibujaran las iniciales: ");
+        caracterCf=Validadores.validarIngresoCaracteres(scanner);  //Fuentes Carlos
+        os8.g2_crearArreglo2(tamanio, caracterCf);
 
         System.out.print("ARR3:  Ingrese su primer nombre: ");
         frase = scanner.nextLine();
-        os8.g2_crearArreglo3(frase);
+        os8.g2_crearArreglo3(frase); //Chavez Mayerli
 
         System.out.println("ARR4:\nIngrese su nombre: ");
         String nombre = scanner.nextLine();
@@ -388,5 +395,7 @@ public class App {
         System.out.print("ARR5:  Ingrese su nombre completo (con espacios): ");
         frase = scanner.nextLine();
         os8.g2_crearArreglo5(frase); //Chugá Juan 
+
+        System.out.println("Cierre del programa!");
     }
 }

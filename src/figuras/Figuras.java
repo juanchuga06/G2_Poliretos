@@ -86,7 +86,7 @@ public class Figuras {
     public void g2_crearFigura7(int tamanio){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La figura es: ");
-        for(int fila = 0 ; fila <= tamanio; fila ++){
+        for(int fila = 0 ; fila <= tamanio - 2; fila ++){
             for( int columna =0; columna <= fila *2; columna ++){
                 while( columna == 0 && fila == 0){
                     System.out.print("__");
@@ -318,10 +318,5 @@ public class Figuras {
         }
         System.out.println();
     }
-
-
-
-
-
     
 }

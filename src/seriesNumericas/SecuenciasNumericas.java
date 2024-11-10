@@ -125,5 +125,6 @@ public class SecuenciasNumericas{
             f+=i*2;
             System.out.print(f + " ");
         }
+        System.out.println();
     }
 }

@@ -24,7 +24,6 @@ public class SecuenciasCaracteres {
             if (actual > tamanio) {
                 break;
             }
-            System.out.println();
             int temp = actual;
             actual = actual + anterior;
             anterior = temp;
@@ -83,13 +82,48 @@ public class SecuenciasCaracteres {
         }
         System.out.println();
     }
+    
+    public void g2_crearSerieChar6Repetido(char letraFinal){ //Fuentes Carlos
+
+        if (letraFinal < 'a' || letraFinal > 'z') {
+            System.out.println("Por favor, ingrese una letra válida entre 'a' y 'z'.");
+            return;
+        }
+
+        
+        char letraActual = 'a';
+        boolean esSuma = true; 
+        int contador = 0; 
+
+        while (letraActual <= letraFinal) {
+          
+            if (contador % 2 == 0) {
+                System.out.print(letraActual);
+            } else {
+                
+                if (esSuma) {
+                    System.out.print(" + ");
+                } else {
+                    System.out.print(" - ");
+                }
+               
+                esSuma = !esSuma;
+            }
+
+            
+            contador++;
+            letraActual ++; 
+        }
+
+        System.out.println();
+    }
 
     public  void g2_crearSerieChar6(int tamanoCara){//ANTHONY GAMBOA
         char[][] abecedario= new char[1][8];
        char letra =  'a';
 
        for(int i = 0; i < 1; i++){
-           for(int j = 0; j < 8; j++){
+           for(int j = 0; j < tamanoCara; j++){
                if( letra <= 'z'){
                    abecedario[i][j] = letra;
                    letra++;
@@ -100,7 +134,7 @@ public class SecuenciasCaracteres {
        }
 
        for(int i = 0; i < 1; i++){ //ANTHONY GAMBOA
-           for(int j = 0; j < 8; j++){
+           for(int j = 0; j < tamanoCara; j++){
                System.out.print(abecedario[i][j] + " ");
            }
            System.out.println();

@@ -29,6 +29,29 @@ public class Validadores {
     }
 
     /**
+     * Valida que la entrada del usuario sea un número entero o sea cero.
+     * @param sc: Se usa para leer el ingreso de datos del usuario.
+     * @return int: Un número entero validado.
+     */
+    public static int validarIngresoEnterosYCero(Scanner sc) {
+        int validarIngreso;
+        while (true) {
+            if (sc.hasNextInt()) {
+                validarIngreso = sc.nextInt();
+                if (validarIngreso >= 0) {
+                    break;
+                } else {
+                    System.out.println("Entrada inválida. Intente de nuevo");
+                }
+            } else {
+                System.out.println("Entrada inválida. Intente de nuevo");
+                sc.next();
+            }
+        }
+        return validarIngreso;
+    }
+
+    /**
      * Valida que la entrada del usuario sea un número de tipo double.
      * @param sc: Se usa para leer el ingreso de datos del usuario.
      * @return double: Un número de tipo double validado.
