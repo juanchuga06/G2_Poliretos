@@ -76,4 +76,82 @@ public class Figuras {
             System.out.println();
         }
     }
+
+    public void g2_imprimirCuadrado(int tamanoCuadrado) { //ANTHONY GAMBOA
+        for(int i = 0; i < tamanoCuadrado; i++){
+            for(int j = 0; j < tamanoCuadrado; j++){
+                if((i == 0 || j == 0)||(i == tamanoCuadrado-1)||(j == tamanoCuadrado-1)){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }  
+            }
+            System.out.println();
+        }
+    }
+
+    public void g2_imprimirRombo(int tamanoRombo){//ANTHONY GAMBOA
+        for(int i= 0; i < tamanoRombo; i++){
+            for(int j = 0; j < tamanoRombo - i -1; j++){
+                System.out.print(" ");
+            }
+            for(int k = 0; k < 2 * i + 1; k++){
+                 System.out.print("*");
+            }
+                 System.out.println();
+            }   
+    }
+
+    public void g2_imprimirEscaleras(int tamanoEscaleras){//ANTHONY GAMBOA
+        for(int i = 0; i < tamanoEscaleras; i++){
+            for(int j = 0; j < tamanoEscaleras - i -1; j++){
+                System.out.print("   ");
+            }
+            System.out.print("__");
+            System.out.print("|");
+            System.out.println();
+        }
+    }
+
+    public void g2_imprimirCruz(int tamanoCruz){//ANTHONY GAMBOA
+        for(int i = 0; i < tamanoCruz; i++){
+            for(int j = 0; j < tamanoCruz; j++){
+                if((i == j)||( i+ j == tamanoCruz -1)){
+                    if(i % 2 == 0){
+                    System.out.print("+");    
+                    }else{
+                    System.out.print("-");    
+                    }
+                    
+                    
+                }else{
+                    System.out.print("  ");
+                }  
+
+            }
+            System.out.println();
+        }
+    }
+
+    
+    public void g2_imprimirRNA(int tamanoRNA){//ANTHONY GAMBOA
+        System.out.println("*");
+        for(int i = 1; i < tamanoRNA; i++){
+            System.out.print("+ ");
+            int num1 = 1;
+            for(int j = 1; j < i; j++){
+                num1 = num1 * (i - j + 1) /j;
+                System.out.print(num1 + " ");
+            }
+            if(i > 0){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+    
 }

@@ -15,4 +15,28 @@ public class Recursivo {
             System.out.println();
         }
     }
+
+    public  int g2_sumas(int a, int b){ //ANTHONY GAMBOA
+        if(b==0){
+            return a;
+        }
+
+        return g2_sumas(a + 1, b -1);
+    }
+
+    public  void g2_contador(int cont){ //ANTHONY GAMBOA
+
+        if(cont < 0){
+            return;
+        }
+        System.out.print("\r" + cont);
+
+        try{
+            Thread.sleep(1000);
+        }catch(InterruptedException e){
+            Thread.currentThread().interrupt();
+            System.out.println("Se interrumpio la espera");
+        }
+        g2_contador(cont - 1);
+    }
 }
