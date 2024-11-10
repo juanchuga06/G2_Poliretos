@@ -147,7 +147,7 @@ public class Automatas {
         }
     }
 
-    public int g3_validarPalabra(String entrada) {
+    public int g3_validarPalabra(String entrada) { //ANTHONY GAMBOA
         int estado= 0;
         int columna=0;
         int mt[][] = {
