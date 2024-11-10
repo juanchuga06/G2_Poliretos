@@ -121,7 +121,7 @@ public class Automatas {
 private int getIndexAlfabeto2(String digito) {
     char c = digito.charAt(0);
 
-    if (c >= 'A' && c <= 'Z') return 5;  // Columna 4 para letras mayúsculas
+    if (c >= 'A' && c <= 'Z') return 5;  // Columna 5 para letras mayúsculas
     if (c >= 'a' && c <= 'z') return 4;  // Columna 4 para letras minúsculas
     if (c >= '0' && c <= '9') return 6;  // Columna 6 para dígitos
     switch (c) {

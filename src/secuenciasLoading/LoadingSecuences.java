@@ -22,20 +22,18 @@ public class LoadingSecuences {
         System.out.println();
     }
 
-    public void g2_crearLoading3(char caracter) { //Mayerli Chavez
+    public void g2_crearLoadingL03(char caracter) {
         int longitudBarra = 20;
         boolean haciaDerecha = true;
         int posicion = 0;
-        System.out.print("[                    ] " + "0%\r");
-        for (int porcentaje = 1; porcentaje <= 100; porcentaje ++) {
-            try {
-                Thread.sleep(250);
-            } catch (InterruptedException e) {
-                System.out.println("Retraso completado ");
-            }
+    
+        for (int porcentaje = 0; porcentaje <= 100; porcentaje ++) {
             StringBuilder barra = new StringBuilder(" ".repeat(longitudBarra));
+    
             barra.setCharAt(posicion, caracter);
+    
             System.out.print("\r[" + barra + "] " + porcentaje + "%");
+    
             if (haciaDerecha) {
                 posicion++;
                 if (posicion == longitudBarra - 1) {
@@ -47,7 +45,14 @@ public class LoadingSecuences {
                     haciaDerecha = true;
                 }
             }
+    
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                System.out.println("Retraso completado ");
+            }
         }
+        System.out.print("\r[" + "                   " + caracter + "] " + "100" + "%");
         System.out.println("\nCarga completada!");
     }
 

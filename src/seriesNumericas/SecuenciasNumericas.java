@@ -1,6 +1,4 @@
-package seriesNumericas;
-
-import java.util.Scanner;
+package seriesNumericas;import java.util.Scanner;
 
 public class SecuenciasNumericas{
     Scanner leer = new Scanner(System.in);
@@ -31,54 +29,20 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-<<<<<<< HEAD
-public void g2_crearSerienumericaS4(int rango) {
-    StringBuilder resultado = new StringBuilder("La operacion es: \n");
+    public void g2_crearSerienumericaS4(int rango){
+        StringBuilder resultado = new StringBuilder("La operacion es: \n");
+        int primerdigito = 0, segundodigito = 0, numero2 = 2;
+        int repositorio;
 
-    int primerdigito = 0, segundodigito = 0, numero2 = 2;
-
-    for (int i = 0; i < rango; i++) {
-        resultado.append(primerdigito).append("/").append(numero2).append("  ");
-        numero2 += 2;
-
-        int repositorio = primerdigito + segundodigito;
-        segundodigito = primerdigito;
-        primerdigito = repositorio;
-=======
-    public void g2_crearSerienumerica4(int rango){ //Mayerli Chavez
-        System.out.println();
-        System.out.println("La operacion es: ");
-        int primerdigito = 0, segundodigito = 0, repositorio = 0, numero2 = 2;
-        while(numero2 <= 4){
-            switch (numero2) {
-                case 2:
-                    System.out.print( primerdigito + "/" + numero2);
-                    System.out.print("  ");
-                    numero2+=2;
-                    primerdigito++;
-                    break;
-                default:
-                    System.out.print( primerdigito + "/" + numero2);
-                    System.out.print("  ");
-                    numero2+=2;
-                    break;
-            }
+        for (int i = 0; i < rango; i++) {
+            resultado.append(primerdigito).append("/").append(numero2).append("  ");
+            numero2 += 2;
+            repositorio = primerdigito + segundodigito;
+            segundodigito = primerdigito;
+            primerdigito = repositorio;
         }
-
-        for (int i = 1 ; i <= rango - 2 ; i++){
-                repositorio= primerdigito + segundodigito;
-                System.out.print( repositorio + "/" + numero2);
-                System.out.print("  ");
-                numero2+=2;
-                segundodigito = primerdigito;
-                primerdigito = repositorio;
-        }
-        System.out.println();
->>>>>>> 79e52056d0f8ac492afd27a0898070540d9519a3
+        System.out.println(resultado);
     }
-
-    System.out.println(resultado);
-}
 
     public void g2_crearSerieNum5(int tamanio){ //Chugá Juan
         int num0 = 2, i = 0;
