@@ -14,7 +14,7 @@ public class App {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         int rango, valor, tamanio, numA, numB, datos, base, potencia;
-        char caracter, caracterCf, letraAEliminar;
+        char caracter, caracterCf = '+', letraAEliminar;
         String digito, entrada, entrada2, palabra, frase;
         double porcent1, porcent2, porcent3, porcent4;
 
@@ -387,7 +387,7 @@ public class App {
         os8.g2_crearArreglo3(frase); //Chavez Mayerli
 
         System.out.println("ARR4:\nIngrese su nombre: ");
-        String nombre = scanner.nextLine();
+        nombre = scanner.nextLine();
         System.out.println("Ingrese su apellido: ");
         String apellido = scanner.nextLine(); 
         os8.g2_crearArreglo4(nombre, apellido); //Anthony Gamboa
