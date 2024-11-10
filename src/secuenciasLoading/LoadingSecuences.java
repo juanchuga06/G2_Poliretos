@@ -22,7 +22,7 @@ public class LoadingSecuences {
         System.out.println();
     }
 
-    public void g2_crearLoadingL03(char caracter) {
+    public void g2_crearLoading3(char caracter) {
         int longitudBarra = 20;
         boolean haciaDerecha = true;
         int posicion = 0;
@@ -98,7 +98,7 @@ public class LoadingSecuences {
         System.out.println();
     }
 
-    public void g2_crearLoadingL08(String digito){
+    public void g2_crearLoading8(String digito){
         int longitudFija = 20; 
         int longitud = digito.length();
         for (int barracarga = 1; barracarga <= longitud; barracarga++) {

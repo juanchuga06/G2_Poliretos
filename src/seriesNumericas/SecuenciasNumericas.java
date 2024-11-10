@@ -29,21 +29,16 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-    public void g2_crearSerienumericaS4(int rango){
-        StringBuilder resultado = new StringBuilder("La operacion es: \n");
-        int primerdigito = 0, segundodigito = 0, numero2 = 2;
-        int repositorio;
-
-        for (int i = 0; i < rango; i++) {
-            resultado.append(primerdigito).append("/").append(numero2).append("  ");
-            numero2 += 2;
-            repositorio = primerdigito + segundodigito;
-            segundodigito = primerdigito;
-            primerdigito = repositorio;
+    public void g2_crearSerienumerica4(int rango){
+        int fibonacci1 = 0, fibonacci2 = 1, numeropar  = 0, resultado = 0;
+        for( int avance = 0 ; avance < rango; avance ++){
+            numeropar+=2;
+            System.out.print(fibonacci1 + "/" + numeropar + " ");
+            resultado = fibonacci1 + fibonacci2;
+            fibonacci1 = fibonacci2;
+            fibonacci2 = resultado;
         }
-        System.out.println(resultado);
     }
-
     public void g2_crearSerieNum5(int tamanio){ //Chugá Juan
         int num0 = 2, i = 0;
         while(i < tamanio){

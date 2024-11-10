@@ -42,7 +42,7 @@ public class App {
         System.out.println("" + "S4: ");
         System.out.print("Ingrese el rango de la operacion a realizar: ");
         rango= validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerienumericaS4(rango); //Secuencia 4
+        os1.g2_crearSerienumerica4(rango); //Secuencia 4
         System.out.println(" ");
 
         System.out.print("Ingrese el tamanio de la serie: ");
@@ -173,7 +173,7 @@ public class App {
         System.out.println(" ");
         System.out.print("Introduce el carácter para la barra de carga: ");//loading3
         caracter =validadores.validarIngresoCaracteres(scanner);
-        os5.g2_crearLoadingL03(caracter);
+        os5.g2_crearLoading3(caracter);
 
         System.out.println(" ");
         System.out.println("" + "L05: ");//loading 5
@@ -186,7 +186,7 @@ public class App {
         System.out.println(" " + "L08: ");
         System.out.print("Ingrese su nombre y apellido: ");
         digito = scanner.nextLine().replace(" ", "");//loading8
-        os5.g2_crearLoadingL08(digito);
+        os5.g2_crearLoading8(digito);
 
         os5.g2_crearLoadingSecuence11();//Chugá Juan
 
@@ -239,7 +239,6 @@ public class App {
         os7.g2_crearAutomata5(entrada2);
 
         Arreglos os8 = new Arreglos();
-
         System.out.println(" ");
         System.out.println(">------------ Arrays ----------<");
         System.out.println("" + "A03:");
