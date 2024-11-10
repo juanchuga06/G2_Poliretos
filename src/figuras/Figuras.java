@@ -1,9 +1,25 @@
 package figuras;
 
-import java.util.Scanner;
-
 public class Figuras {
-       Scanner leer = new Scanner(System.in);
+
+    public void g2_crearFigura2(int tamaño){ //Fuentes Carlos
+        System.out.println();
+        for (int i = 0; i < tamaño; i++) {
+            for (int j = 0; j < tamaño; j++) {
+                if(i == 0 || i == tamaño -1 || j == 0 || j == tamaño - 1) {
+                    if((i + j) % 2 == 0)
+                        System.out.print("* ");
+                    else
+                        System.out.print("+ ");
+                }
+                else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 
     public void g2_crearFigura3(int filas){ //Chugá Juan
         for(int numero_fila = 1; numero_fila <= filas; numero_fila++){
@@ -12,8 +28,22 @@ public class Figuras {
             System.out.println();
         }
     }
-
-    public void g2_crearFiguras5(int tamanio){ //Mayerli Chavez
+    
+    public void g2_crearFigura4(int tamaño){ //Fuentes Carlos
+        System.out.println();
+        for (int i = 0; i < tamaño; i++) { 
+            for (int j = 0; j < tamaño - i - 1; j++) {
+                System.out.print("  ");
+            }
+            for (int k = 0; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+    
+    public void g2_crearFigura5(int tamanio){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La figura es: ");
         for(int fila = tamanio; fila > 0 ; fila --){
@@ -25,9 +55,10 @@ public class Figuras {
             }
             System.out.println(" ");
         }
+        System.out.println();
     }
 
-    public void g2_crearFiguras7(int tamanio){ //Mayerli Chavez
+    public void g2_crearFigura7(int tamanio){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La figura es: ");
         for(int fila = 0 ; fila <= tamanio; fila ++){
@@ -42,8 +73,24 @@ public class Figuras {
             System.out.print("|__");
             System.out.println("");
         }
+        System.out.println();
     }
 
+    public void g2_crearFigura9(int tamaño){ //Fuentes Carlos
+        for (int i = tamaño; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("    ");
+            }
+                System.out.print("___|");
+            for (int j = 0; j < tamaño - i; j++) {
+                System.out.print("        ");
+            }
+                System.out.print("|___");
+                System.out.println();
+        }
+        System.out.println();
+    }
+   
     public void g2_crearFigura10(int filas){ //Chugá Juan
         char caracteres [] = {'-', '+'};
 
@@ -57,9 +104,31 @@ public class Figuras {
                 System.out.println(((" ".repeat(3 + 4*(numero_fila-2))) + "|"));
             }
         }
+        System.out.println();
     }
+    
+    public void g2_crearFigura11(int tamaño){ //Fuentes Carlos
+        tamaño = tamaño + 1;
+        for (int x = 2; x <= tamaño; x++) {
+            for (int i = 0; i < tamaño - x; i++) {
+                System.out.print(" ");
+            }
+                System.out.print("|");
 
-    public void g2_crearFiguras12(int tamanio){ //Mayerli Chavez
+            for (int j = 1; j < x; j++) {
+                System.out.print("_");
+            }
+                System.out.println();
+
+            for (int k = 1; k < x; k++) {
+                System.out.print("  "); 
+            }
+        }
+                System.out.println(); 
+        
+    }
+    
+    public void g2_crearFigura12(int tamanio){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La figura es: ");
         for (int fila = 0; fila  <= tamanio; fila++) {
@@ -68,9 +137,10 @@ public class Figuras {
             }
             System.out.println("");
         }
+        System.out.println();
     }
 
-    public void g2_crearFiguras13(int tamanio){ //Mayerli Chavez
+    public void g2_crearFigura13(int tamanio){ //Mayerli Chavez
         System.out.println("");
             System.out.println("La figura es: ");
             for (int fila = tamanio ; fila >= 0; fila--) {
@@ -79,6 +149,31 @@ public class Figuras {
                 }
                 System.out.println("");
             } 
+            System.out.println();
+    }
+    
+    public void g2_crearFigura14(int tamaño){ //Fuentes Carlos
+        for (int i = 0; i < tamaño; i++) {
+            
+            for (int j = 0; j < tamaño - i - 1; j++) {
+                System.out.print(" ");
+            }
+    
+            int cont = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(cont + " ");
+                cont = cont * (i - j) / (j + 1);
+            }
+
+            cont = 1;
+            for (int j = i; j > 0; j--) {
+                cont = cont * j / (i - j + 1);
+                System.out.print(cont + " ");
+            }
+    
+                System.out.println();
+        }
+        System.out.println();
     }
 
     public void g2_crearFigura15(int tamanio){ //Chugá Juan
@@ -97,6 +192,7 @@ public class Figuras {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public void g2_crearFigura17(int tamanio){ //Chugá Juan
@@ -114,6 +210,7 @@ public class Figuras {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public void g2_crearFigura18(int tamanio){ //Chugá Juan
@@ -132,5 +229,6 @@ public class Figuras {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

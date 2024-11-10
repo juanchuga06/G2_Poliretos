@@ -3,9 +3,8 @@ package arrays;
 import java.util.Scanner;
 
 public class Arreglos {
-    Scanner leer = new Scanner(System.in);
 
-    public void g2_crearArrays3(String nombre){ 
+    public void g2_crearArreglo3(String nombre){ //Chavez Mayerli
         int longitud = nombre.length();
         int altura= 2 * (longitud);
         for (int ejey = altura; ejey >= 0; ejey--) {
@@ -57,6 +56,7 @@ public class Arreglos {
             }
             System.out.println();
         }
+        System.out.println();
         scanlinea.close();
     }
 }

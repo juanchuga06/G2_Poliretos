@@ -6,19 +6,15 @@ public class CadenasCaracteres {
     Scanner scanner = new Scanner(System.in);
     Scanner leer = new Scanner(System.in);
 
-    public void g2_crearCadenaCaracteres2(String frase){ //Mayerli Chavez
+    public void g2_crearCadenaChar2(String frase){ //Mayerli Chavez
         int contador_letra =0;
         for(char c: frase.toCharArray()){
-            if(Character.isLetter(c) && !esVocal1(c)){
+            if(Character.isLetter(c) && !esVocal(c)){
                 contador_letra++;
             }
         }
         System.out.println("La frase ingresada tiene " + contador_letra + " letras.");
         System.out.println(" ");
-    }
-    public  static boolean esVocal1(char c){
-        c = Character.toLowerCase(c);
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
     public void g2_crearCadenaChar3(String frase, char letra){ //Chugá Juan
@@ -41,6 +37,23 @@ public class CadenasCaracteres {
         }        
     }
 
+    public void g2_crearCadenaChar4(String frase, char letraEliminada){ //Fuentes Carlos
+        String fraseSinLetra = "";
+
+        for (int i=0; i<frase.length(); i++){
+            char letraActual = frase.charAt(i);
+            if (letraActual==letraEliminada){
+                fraseSinLetra+=" ";
+            } else {
+                fraseSinLetra+=letraActual;
+            }
+        }
+        System.out.println("Frase elegida: "+frase);
+        System.out.println("Letra a eliminar: "+letraEliminada);
+        System.out.println("Frase sin la letra: "+fraseSinLetra);
+        System.out.println();
+    }
+    
     public void g2_crearCadenaChar5(char frase []){ //Chugá Juan
         System.out.print("Salida: ");
         for(int index = frase.length -1; index >= 0; index--){
@@ -51,13 +64,13 @@ public class CadenasCaracteres {
         }
         System.out.println();
     }
-
-    public void g2_crearCadenaCaracteres6(String frase){ //Mayerli Chavez
+    
+    public void g2_crearCadenaChar6(String frase){ //Mayerli Chavez
         StringBuilder letraFrase = new StringBuilder();
         String nuevafrase = "";
         for (char c : frase.toCharArray()) {
             if (Character.isLetter(c)) {
-                    if (esVocal1(c)) {
+                    if (esVocal(c)) {
                         letraFrase.append(Character.toLowerCase(c));
                     } else {
                         letraFrase.append(Character.toUpperCase(c));
@@ -71,13 +84,49 @@ public class CadenasCaracteres {
         System.out.println(" ");
     }
 
-    public void g2_crearCadenaCaracteres7(String frase){ //Mayerli Chavez
+    public void g2_crearCadenaChar7(String frase){ //Mayerli Chavez
         String fraseModificada = frase.toUpperCase().replace("J", "");
         System.out.print("La nueva frase es: " + fraseModificada);
         System.out.println(" ");
     }
 
-    public boolean esVocal(char vocal){ 
+    public void g2_crearCadenaChar8(){ //Fuentes Carlos
+      // Conjunto de palabras
+      String[] palabras = {"amor", "roma", "raton", "tron", "nora", "aron"};
+        
+      // Seleccionamos una palabra aleatoria del conjunto
+      String palabraSeleccionada = palabras[(int)(Math.random() * palabras.length)];
+      
+      System.out.println("Palabra seleccionada: " + palabraSeleccionada);
+      System.out.print("Ingresa un anagrama de la palabra: ");
+      
+      String anagramaIngresado = scanner.nextLine();
+      
+      if (esAnagrama(palabraSeleccionada, anagramaIngresado)) {
+          System.out.println("¡Correcto! \"" + anagramaIngresado + "\" es un anagrama de \"" + palabraSeleccionada + "\".");
+      } else {
+          System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".");
+      }
+    
+    }
+    public static boolean esAnagrama(String palabra1, String palabra2) {
+        // Comprobamos si las longitudes son diferentes
+        if (palabra1.length() != palabra2.length()) {
+            return false;
+        }
+        
+        // Convertimos las palabras a arreglos de caracteres y los ordenamos
+        char[] arr1 = palabra1.toCharArray();
+        char[] arr2 = palabra2.toCharArray();
+        
+        java.util.Arrays.sort(arr1);
+        java.util.Arrays.sort(arr2);
+        
+        // Comparamos los arreglos ordenados
+        return java.util.Arrays.equals(arr1, arr2);
+    }
+
+    public static boolean esVocal(char vocal){ 
         char [] vocales = {'a', 'e', 'i', 'o', 'u'};
         boolean validado = false;
         for(int index = 0; index < vocales.length; index++){

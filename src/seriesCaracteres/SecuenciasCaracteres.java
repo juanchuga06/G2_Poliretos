@@ -1,9 +1,6 @@
 package seriesCaracteres;
 
-import java.util.Scanner;
-
 public class SecuenciasCaracteres {
-    Scanner leer = new Scanner(System.in);
 
     public void g2_crearSerieChar1(int tamanio){ //Chugá Juan
         char [] caracteres = {'+', '-'};
@@ -16,7 +13,26 @@ public class SecuenciasCaracteres {
         System.out.println();
     }
 
-    public void g2_crearSeriecaractere3(int valor){ //Mayerli Chavez
+    public void g2_crearSerieChar2(int tamanio, char caracterCf){ //Fuentes Carlos
+        int anterior = 1;
+        int actual = 1;
+        for (int i = 1; i <= tamanio; i++) {
+            for (int j = 1; j <= actual; j++) {
+                System.out.print(caracterCf);
+            }
+            System.out.println();
+            if (actual > tamanio) {
+                break;
+            }
+            System.out.println();
+            int temp = actual;
+            actual = actual + anterior;
+            anterior = temp;
+        }
+        System.out.println();
+    }
+
+    public void g2_crearSerieChar3(int valor){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La operacion es: ");
         for (int i = 2; i <= valor; i++) {
@@ -39,7 +55,7 @@ public class SecuenciasCaracteres {
                 System.out.print("  ");
             }
         }
-     System.out.println(" ");
+        System.out.println(" ");
     }
 
     public void g2_crearSerieChar5(int tamanio){ //Chugá Juan
@@ -53,7 +69,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar7(int tamanio){ //Chugá Juan
-        
         char letra = 97;
         int numero_caracteres;
         for(int posicion = 1; posicion <= tamanio; posicion++) {
@@ -61,12 +76,14 @@ public class SecuenciasCaracteres {
             for(int index = 0; index < numero_caracteres; index++)
                 System.out.print(letra);
             letra++;
+            if(letra == 123)
+                letra = 97;
             System.out.print(" ");
         }
         System.out.println();
     }
 
-    public void g2_crearSeriecaractere8(int valor){ //Mayerli Chavez
+    public void g2_crearSerieChar8(int valor){ //Mayerli Chavez
         System.out.println("");
         System.out.println("La operacion es: ");
         
@@ -81,6 +98,40 @@ public class SecuenciasCaracteres {
             numeroletra++;
         }
         System.out.println();
+    }
+    
+    public void g2_crearSerieChar9(char letraFinalCf){ //Fuentes Carlos
+        
+        int LetraNumeroASCII = 97;
+        char LetraActual = (char) LetraNumeroASCII;
+        int TotalRepeticiones = 1;
+        int ValorLetra1 = 0;
+        int ValorLetra2 = 1;
+        boolean banderaCaracterExtra = true;
+
+        if ((letraFinalCf < 97) || (letraFinalCf > 122)) {
+            System.out.println("Ha ingresado un caracter no valido, por tanto el ejercicio no se va a ejecutar");
+        } else {
+            // El patron de repeticion de los caracteres se basa en una secuencia de
+            // Fibonacci
+            if (banderaCaracterExtra) {
+                banderaCaracterExtra = false;
+                System.out.print(LetraActual + "  ");
+                LetraNumeroASCII += 1;
+            }
+            while (LetraActual < letraFinalCf) {
+                LetraActual = (char) LetraNumeroASCII;
+                for (int i = 0; i < TotalRepeticiones; i++) {
+                    System.out.print(LetraActual);
+                }
+                System.out.print("  ");
+                LetraNumeroASCII += 1;
+                TotalRepeticiones = ValorLetra1 + ValorLetra2;
+                ValorLetra1 = ValorLetra2;
+                ValorLetra2 = TotalRepeticiones;
+            }
+            System.out.println("");
+        }
     }
     
 }

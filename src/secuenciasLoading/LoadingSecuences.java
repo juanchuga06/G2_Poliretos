@@ -1,9 +1,6 @@
 package secuenciasLoading;
 
-import java.util.Scanner;
-
 public class LoadingSecuences {
-    Scanner leer = new Scanner(System.in);
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -19,10 +16,10 @@ public class LoadingSecuences {
                 System.out.println();
             }
         }
-        System.out.println();
+        System.out.println("\n¡Carga Completa!\n");
     }
 
-    public void g2_crearLoading3(char caracter) {
+    public void g2_crearLoadingSecuence3(char caracter) { //Chavez Mayerli
         int longitudBarra = 20;
         boolean haciaDerecha = true;
         int posicion = 0;
@@ -53,10 +50,10 @@ public class LoadingSecuences {
             }
         }
         System.out.print("\r[" + "                   " + caracter + "] " + "100" + "%");
-        System.out.println("\nCarga completada!");
+        System.out.println("\nCarga completada!\n");
     }
 
-    public void g2_crearLoading5(){ //Mayerli Chavez
+    public void g2_crearLoadingSecuence5(){ //Mayerli Chavez
         int longitudBarra = 20;
         for (int barraprogreso = 1; barraprogreso <= longitudBarra; barraprogreso++) {
             int porcentaje = (barraprogreso * 100) / longitudBarra;
@@ -79,15 +76,15 @@ public class LoadingSecuences {
                    System.out.println("Retraso completado ");
                 }
         }
-        System.out.println("\n¡Carga completa!");
+        System.out.println("\n¡Carga completa!\n");
     }
 
     public void g2_crearLoadingSecuence7(){ //Chugá Juan
         char [] caracteres = {'\\', '|', '/','-'};
         int espacios_llenos = 0;
         for(int progress = 0; progress <= 100; progress += 5){
-            System.out.print("[" + "=".repeat(espacios_llenos) + caracteres[espacios_llenos%4] 
-                                 + " ".repeat(20-espacios_llenos) + "] " + progress + "%\r" );
+            System.out.print("[" + "=".repeat(Math.min(espacios_llenos, 19)) + caracteres[espacios_llenos%4] 
+                                 + " ".repeat(19-(espacios_llenos-1)) + "] " + progress + "%\r" );
             try {
                 Thread.sleep(700);
             } catch (InterruptedException e) {
@@ -95,10 +92,10 @@ public class LoadingSecuences {
             }
             espacios_llenos++;
         }
-        System.out.println();
+        System.out.println("\n¡Carga Completa!\n");
     }
 
-    public void g2_crearLoading8(String digito){
+    public void g2_crearLoadingSecuence8(String digito){ //Chavez Mayerli
         int longitudFija = 20; 
         int longitud = digito.length();
         for (int barracarga = 1; barracarga <= longitud; barracarga++) {

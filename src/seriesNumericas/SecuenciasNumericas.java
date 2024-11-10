@@ -1,9 +1,20 @@
-package seriesNumericas;import java.util.Scanner;
+package seriesNumericas;
 
 public class SecuenciasNumericas{
-    Scanner leer = new Scanner(System.in);
+    public void g2_crearSerieNum1(int tamanio){  //Fuentes Carlos
+        int n = tamanio;
+        int a = 0, b = 1, c;
+        System.out.print("SN1 es: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        System.out.println();
+    }
 
-    public void g2_crearSerienumerica2(int rango){ //Mayerli Chavez
+    public void g2_crearSerieNum2(int rango){ //Mayerli Chavez
         System.out.println();
         System.out.println("La operacion es: ");
         for (int i = 1; i <= rango; i++) {
@@ -29,7 +40,7 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-    public void g2_crearSerienumerica4(int rango){
+    public void g2_crearSerieNum4(int rango){ //Mayerli Chavez
         int fibonacci1 = 0, fibonacci2 = 1, numeropar  = 0, resultado = 0;
         for( int avance = 0 ; avance < rango; avance ++){
             numeropar+=2;
@@ -38,7 +49,9 @@ public class SecuenciasNumericas{
             fibonacci1 = fibonacci2;
             fibonacci2 = resultado;
         }
+        System.out.println();
     }
+
     public void g2_crearSerieNum5(int tamanio){ //Chugá Juan
         int num0 = 2, i = 0;
         while(i < tamanio){
@@ -57,7 +70,16 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-    public void g2_crearSerienumerica9(int rango){ //Mayerli Chavez
+    public void g2_crearSerieNum7(int tamanio){  //Fuentes Carlos
+        int n = tamanio;
+        System.out.print("SN7 es: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print((1 + 3 * i) + " ");
+        }
+        System.out.println();
+    }
+
+    public void g2_crearSerieNum9(int rango){ //Mayerli Chavez
         System.out.println();
                 System.out.println("La operacion es: ");
                 double n=1d;
@@ -68,4 +90,13 @@ public class SecuenciasNumericas{
                 }
         System.out.println();
    }
+
+    public void g2_crearSerieNum10(int tamanio){  //Fuentes Carlos
+        int numeroTres = 3;
+        while (numeroTres <= tamanio) {
+            System.out.print(numeroTres + " ");
+            numeroTres = numeroTres*3;
+        }
+        System.out.println("");
+    }
 }
