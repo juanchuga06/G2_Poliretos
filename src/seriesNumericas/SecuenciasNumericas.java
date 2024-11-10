@@ -1,6 +1,7 @@
 package seriesNumericas;
 
 public class SecuenciasNumericas{
+    
     public void g2_crearSerieNum1(int tamanio){  //Fuentes Carlos
         int n = tamanio;
         int a = 0, b = 1, c;
@@ -70,6 +71,14 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
+    public void g2_crearSerieNum6(int tamanoS6) { //Gamboa Anthony
+        for(int i = 1; i <= tamanoS6; i++){
+            int num1 = i * i;
+            System.out.print(num1 + " ");
+        }
+        System.out.println();
+    }
+    
     public void g2_crearSerieNum7(int tamanio){  //Fuentes Carlos
         int n = tamanio;
         System.out.print("SN7 es: ");
@@ -79,6 +88,16 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
+    public void g2_crearSerieNum8(int tamanoS8 ){ //Gamboa Anthony
+        int c = 5;
+        int d = 3;
+        for(int i = 0; i <= tamanoS8; i++){
+            int result = d + (i * c);
+            System.out.print(result + " ");
+        }
+        System.out.println();
+    }
+   
     public void g2_crearSerieNum9(int rango){ //Mayerli Chavez
         System.out.println();
                 System.out.println("La operacion es: ");
@@ -98,5 +117,13 @@ public class SecuenciasNumericas{
             numeroTres = numeroTres*3;
         }
         System.out.println("");
+    }
+    
+    public void g2_crearSerieNum12(int tamanoS12){ //Gamboa Anthony
+        int f =0;
+        for(int i = 1; i <= tamanoS12; i++){
+            f+=i*2;
+            System.out.print(f + " ");
+        }
     }
 }

@@ -6,6 +6,18 @@ public class CadenasCaracteres {
     Scanner scanner = new Scanner(System.in);
     Scanner leer = new Scanner(System.in);
 
+    public  int g2_crearCadenaChar1(String frase12){//Gamboa Anthony
+        int cont = 0;
+        String vocales = "aeiouAEIOU";
+        for(int i = 0; i < frase12.length(); i++){
+            char a = frase12.charAt(i);
+            if(vocales.indexOf(a) != -1){
+                cont++;
+            }
+        }
+        return cont;
+    }
+
     public void g2_crearCadenaChar2(String frase){ //Mayerli Chavez
         int contador_letra =0;
         for(char c: frase.toCharArray()){
@@ -126,6 +138,25 @@ public class CadenasCaracteres {
         return java.util.Arrays.equals(arr1, arr2);
     }
 
+    public void g2_crearCadenaChar9(String fraseC){ //Gamboa Anthony
+        StringBuilder resultado = new StringBuilder();
+        boolean mayuscula = true;
+
+        for(char c : fraseC.toCharArray()){
+            if(Character.isLetter(c)){
+                if(mayuscula){
+                    resultado.append(Character.toUpperCase(c));
+                }else{
+                    resultado.append(Character.toLowerCase(c));
+                }
+                mayuscula = !mayuscula;
+            }else{
+                resultado.append(c);
+            }
+        }
+        System.out.println("Frase alternada " + resultado);
+    }
+
     public static boolean esVocal(char vocal){ 
         char [] vocales = {'a', 'e', 'i', 'o', 'u'};
         boolean validado = false;
@@ -138,4 +169,5 @@ public class CadenasCaracteres {
         }
         return validado;
     }
+
 }

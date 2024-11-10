@@ -24,6 +24,23 @@ public class Arreglos {
         System.out.println("\n");
     }
 
+    public void g2_crearArreglo4(String nombre, String apellido){ //Gamboa Anthony
+        int length = Math.max(nombre.length(), apellido.length());
+
+        for(int i = 0; i < length; i++){
+            for(int j = 0; j < length; j++){
+                if(j == i){
+                    System.out.print(nombre.charAt(i % nombre.length()));
+                }else if(j == length - i - 1){
+                    System.out.print(apellido.charAt(i % apellido.length()));
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public void g2_crearArreglo5(String nombre_completo){ //Chugá Juan
         String [] nombres = new String[4];
         Scanner scanlinea = new Scanner(nombre_completo).useDelimiter(" ");
@@ -59,4 +76,5 @@ public class Arreglos {
         System.out.println();
         scanlinea.close();
     }
+
 }
