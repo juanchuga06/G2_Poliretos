@@ -6,7 +6,7 @@ public class Automatas {
 
     final String alfabetosimple = "a.b.c",
           alfabeto = "+;-;.;,;0;1;2;3;4;5;6;7;8;9; ",
-          alfabeto2 = "$-_-,-;-^[a-zA-z0-9 ]";
+          alfabeto2 = "$-_-,-;-=-^[a-zA-z0-9 ]";
 
     final int R = -10, A = 3, matrizTransicion01[][] = {//   a  b  c  \n any
                                                             {1, 2, R, R, R},//q0
@@ -33,20 +33,20 @@ public class Automatas {
                                                         {e,    e,    e,   e,     7,    7,    7,    7,    7,    7,    7,    7,    7,    7,    e,        e},      //q6
                                                         {e,    e,    e,   e,     7,    7,    7,    7,    7,    7,    7,    7,    7,    7,    decimal,  decimal},//q7
                                                     },
-                                matriztransicion05[][] ={//$      _      ,      ;      a-z      A-Z      0-9      " "......Entrega      espacio
-                                                        {e,     e,     e,     e,      2,       1,       e,       e,         e,           e}, //q0
-                                                        {1,     1,     6,     6,      1,       1,       1,       4,         e,           e},//q1
-                                                        {2,     2,     8,     8,      2,       2,       2,       7,         e,           e},//q2
-                                                        {3,     3,    11,    11,      3,       3,       3,      10,         e,           e},//q3
-                                                        {e,     e,     5,     5,      e,       e,       e,       e,         e,           e},//q4
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q5
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q6
-                                                        {e,     e,     9,     9,      e,       e,       e,       e,          e,           e},//q7
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q8
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q9
-                                                        {e,     e,    12,    12,      e,       e,       e,       e,          e,              e},//q10
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q11
-                                                        {e,     e,     e,     e,      e,       e,       e,       e,     valido,         valido},//q12
+                                matriztransicion05[][] ={//$      _      ,      ;      =      a-z      A-Z      0-9        " "      Entrega
+                                                        {e,     e,       e,     e,     e,       2,       1,       e,         e,       e}, //q0
+                                                        {1,     1,       6,     6,     6,       1,       1,       1,         4,       e},//q1
+                                                        {2,     2,       8,     8,     8,       2,       2,       2,         7,       e},//q2
+                                                        {3,     3,      11,    11,    11,       3,       3,       3,        10,       e},//q3
+                                                        {e,     e,       5,     5,     5,       e,       e,       e,         e,       e},//q4
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q5
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q6
+                                                        {e,     e,       9,     9,     9,       e,       e,       e,         e,       e},//q7
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q8
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q9
+                                                        {e,     e,      12,    12,    12,       e,       e,       e,         e,       e},//q10
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q11
+                                                        {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q12
                                                     };
 
     public void g2_crearAutomata1(String palabra){ //Chugá Juan
@@ -111,25 +111,31 @@ public class Automatas {
     }
 
     if (esDecimal || q == 4 || q == 7) {
-        System.out.println("El numero ingresado es un numero decimal: " + entrada);
+        System.out.println("El numero ingresado es un numero decimal");
     } else {
-        System.out.println("El numero ingresado no es numero decimal...");
+        System.out.println("El numero ingresado no es numero decimal...");        
+        System.out.println(" ");
+        System.out.print("Ingrese una  nueva cifra: ");
+        entrada = leer.nextLine().trim();
+        g2_crearAutomata4(entrada);
     }
+    System.out.println(" ");
 }
 
 @SuppressWarnings("resource")
 private int getIndexAlfabeto2(String digito) {
     char c = digito.charAt(0);
 
-    if (c >= 'A' && c <= 'Z') return 5;  // Columna 5 para letras mayúsculas
-    if (c >= 'a' && c <= 'z') return 4;  // Columna 4 para letras minúsculas
-    if (c >= '0' && c <= '9') return 6;  // Columna 6 para dígitos
+    if (c >= 'A' && c <= 'Z') return 6;  // Columna 5 para letras mayúsculas
+    if (c >= 'a' && c <= 'z') return 5;  // Columna 4 para letras minúsculas
+    if (c >= '0' && c <= '9') return 7;  // Columna 6 para dígitos
     switch (c) {
         case '$': return 0;   // Columna 0 para signo de dólar
         case '_': return 1;   // Columna 1 para guion bajo
         case ',': return 2;   // Columna 2 para coma
         case ';': return 3;   // Columna 3 para punto y coma
-        case ' ': return 7;   // Columna 7 para espacio
+        case '=': return 4;   // Colunma 4 para el igual
+        case ' ': return 8;   // Columna 7 para espacio
         default: return -1;   // Caracter no válido en el alfabeto
     }
 }
@@ -150,10 +156,15 @@ public void g2_crearAutomata5(String entrada2){ //Mayerli Chavez
         }
     }
     if (esValido || q == 5 || q == 6 || q ==8 || q==9 || q==11 || q == 12) {
-        System.out.println("La variable ingresada es valida ");
+        System.out.println("La variable ingresada es valida");
     } else {
         System.out.println("La variable ingresada no es valida...");
+        System.out.println(" ");
+        System.out.print("Ingrese una  nueva variable: ");
+        entrada2 = leer.nextLine();
+        g2_crearAutomata5(entrada2);
     }
+    System.out.println(" ");
 }
 
     private int getIndexAlfabetoSimple(char letra) {

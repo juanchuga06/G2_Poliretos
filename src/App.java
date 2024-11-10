@@ -22,10 +22,10 @@ public class App {
         String digito;
         String entrada;
         String entrada2;
-
+        String palabra;
+/* 
         System.out.println("POLIRETOS -  GRUPO 2 - Paralelo GR2SW");
         System.out.println("Integrantes:\nChavez.Mayerli\nChuga.Juan\nFuentes.Carlos\nGamboa.Anthony\n");
-        String palabra;
 
        SecuenciasNumericas os1 = new SecuenciasNumericas();
        System.out.println(">---------- Serie de numeros ----------<");
@@ -215,7 +215,7 @@ public class App {
         System.out.print("Ingrese el límite superior de la cuenta: ");
         int limite_superior = scanner.nextInt();
         os6.g2_crearRecursion5(0, limite_superior); //Chugá Juan 5
-        scanner.nextLine();
+        scanner.nextLine(); */
 
         
         Automatas os7 = new Automatas();
@@ -238,7 +238,7 @@ public class App {
         entrada2 = scanner.nextLine();
         os7.g2_crearAutomata5(entrada2);
 
-        Arreglos os8 = new Arreglos();
+/*         Arreglos os8 = new Arreglos();
         System.out.println(" ");
         System.out.println(">------------ Arrays ----------<");
         System.out.println("" + "A03:");
@@ -248,7 +248,7 @@ public class App {
 
         System.out.print("Ingrese su nombre completo(con espacios): ");
         frase = scanner.nextLine();
-        os8.g2_crearArreglo5(frase); //Chugá Juan
+        os8.g2_crearArreglo5(frase); //Chugá Juan */
         
     }
 }
