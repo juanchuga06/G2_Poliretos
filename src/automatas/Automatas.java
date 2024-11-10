@@ -76,7 +76,7 @@ public class Automatas {
     }
 
 
-    public int g3_cambiarCaracterClave(char c) {
+    public int g2_cambiarCaracterClave(char c) {
         if (c >= 65 && c <= 90) {
             return 0;
         }
@@ -92,7 +92,7 @@ public class Automatas {
         return -1;
     }
 
-    public int g3_validarContraseña(String contraseña) {
+    public int g2_validarContraseña(String contraseña) { //Anthony Gamboa
         int estado = 0;
         int columna = 0;
         int e = -1;
@@ -106,7 +106,7 @@ public class Automatas {
         };
 
         for (int i = 0; i < contraseña.length(); i++) {
-            columna = g3_cambiarCaracterClave(contraseña.charAt(i));
+            columna = g2_cambiarCaracterClave(contraseña.charAt(i));
             if (columna == 4 || mt[estado][columna] == e) {
                 return -1;
             }
@@ -118,76 +118,53 @@ public class Automatas {
         return 1;
     }
 
-    public int g3_cambiardeCharacter(char c) {
+    public int g2_cambiarCaracter2(char c) {
         switch (c) {
-            case 'f':
+            case 'a': 
                 return 0;
-            case 'o':
+            case 'b':
                 return 1;
-            case 'r':
-                return 2;
-            case 'i':
-                return 3;
-            case 'e':
-                return 4;
-            case 'l':
-                return 5;
-            case 's':
-                return 6;
-            case 'h':
-                return 7;
             case 'c':
-                return 8;
-            case 'a':
-                return 9;
-            case '(':
-                return 10;
+                return 2;
             default:
                 return -1;
         }
     }
-
-    public int g3_validarPalabra(String entrada) { //ANTHONY GAMBOA
-        int estado= 0;
-        int columna=0;
+    
+    public int g2_llamarAutomata2(String automata1) {
+        int estadoInicial = 0;
+        int columna = 0;
+        char caracter = ' ';
+        int e = -1;
         int mt[][] = {
-            { 1,  -1, -1,  4, 6, -1, -1, -1, -1, -1, -1},
-            {-1,   2, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1,  -1,  3, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1,  -1, -1, -1, 11, -1, -1, -1, -1, -1, 10},
-            {5,  -1, -1,  -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1,  -1, -1, -1,  6, -1, -1, -1, -1, -1, 10},
-            {-1,  -1, -1, -1, -1,  7, -1, -1, -1, -1, -1},
-            {-1,  -1, -1, -1, -1, 8,  -1, -1, -1, -1, -1},
-            {-1,  -1, -1, -1, 9, -1,  -1, -1, -1, -1, -1},
-            {-1,  -1, -1, -1, -1, -1,  -1, -1, -1, -1, 10},
-            {-1,  -1, -1, -1, -1, -1,  -1, -1, -1, -1, 10},
-            {-1,  -1, -1, -1, -1, -1,  -1, 12, -1, -1, -1},
-            {-1,  -1, -1, -1, -1, -1,  -1, -1, 13, -1, -1},
-            {-1,  -1, -1, -1, -1, -1,  -1, -1, -1, 14, -1},
-            {-1,  -1, -1, -1, -1, -1,  -1, -1, -1, -1, 10},
-        };
-        for (int i = 0; i<entrada.length(); i++) {
-            columna = g3_cambiardeCharacter(entrada.charAt(i));
-            if (columna == -1 || mt[estado][columna] == -1) {
+            {1, e, e,},
+            {e, 2, e,},
+            {e, 2, 3,},
+            {4, e, e},
+            {e, e, e},
+        }; 
+        for (int i = 0; i < automata1.length(); i++) {
+            caracter = automata1.charAt(i);
+            columna = g2_cambiarCaracter2(caracter);
+            if (columna == -1 || mt[estadoInicial][columna] == e) {
                 return -1;
             }
-            estado = mt[estado][columna];
+            estadoInicial = mt[estadoInicial][columna];
         }
-        if (estado == 10) {
-            return 1;
+        if (estadoInicial != 3) {
+            return -1;
         }
-        return -1;
+        return 2;
     }
 
-    public void g3_validarEntrada(Scanner sc) {
-        System.out.println("Ingrese en inicio de un comando bucle ejemplo if(");
-        String entrada = sc.next();
-        int resultado = g3_validarPalabra(entrada);
-        if (resultado == 1) {
-            System.out.println("Bucle validado.");
+    public void g2_imprimirAutomata2(Scanner sc) {
+        System.out.println("Ingrese una palabra con a b c a");
+        String automata1 = sc.next();
+        int resultado = g2_llamarAutomata2(automata1);
+        if (resultado == 2) {
+            System.out.println("La palabra sí es correcta");
         } else {
-            System.out.println("Bucle no validado");
+            System.out.println("La palabra es incorrecta");
         }
     }
 }

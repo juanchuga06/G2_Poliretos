@@ -171,7 +171,8 @@ public class App {
 
         System.out.println("Ingrese un numero: ");
         int cont = scanner.nextInt();
-        os6.g2_contador(cont); //Anthony Gamboa
+        os6.g2_contador(cont);
+        System.out.println(); //Anthony Gamboa
         scanner.nextLine(); 
 
 
@@ -187,15 +188,16 @@ public class App {
         
         System.out.println("Ingrese una contraseña:");//ANTHONY GAMBOA
         String contraseña = scanner.nextLine();
-        int resultado1 = os7.g3_validarContraseña(contraseña);
+        int resultado1 = os7.g2_validarContraseña(contraseña);
         if (resultado1 == 1) {
             System.out.println("Su contraseña es válida");
         } else {
             System.out.println("Su contraseña no es válida");
         }
 
-        Scanner scanner = new Scanner(System.in);
-        os7.g3_validarEntrada(scanner);
+        os7.g2_imprimirAutomata2(scanner);//Anthony Gamboa
+        scanner.nextLine();
+       
 
 
         Arreglos os8 = new Arreglos();
