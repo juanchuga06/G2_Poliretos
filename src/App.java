@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class App {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        int rango, valor, tamanio, numA, numB, datos, base, potencia;
+        int rango, valor, tamanio, numA, numB, datos, base, potencia, factorial;
         char caracter, caracterCf = '+', letraAEliminar;
         String digito, entrada, entrada2, palabra, frase;
         double porcent1, porcent2, porcent3, porcent4;
@@ -294,7 +294,7 @@ public class App {
 
         System.out.print("R1:   Ingrese el numero que desea conocer su factorial: ");
         datos = Validadores.validarIngresoEnterosYCero(scanner);
-        int factorial = os6.g2_crearRecursion1(datos);
+        factorial = os6.g2_crearRecursion1(datos);
         System.out.println("El factorial del numero es: " + factorial); //Chavez Mayerli
 
         System.out.print("R2:\nIngrese el primer sumando: ");

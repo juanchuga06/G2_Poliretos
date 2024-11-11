@@ -28,13 +28,11 @@ public class Validadores {
         return validarIngreso;
     }
 
-
-     /**
+    /**
      * Valida que la entrada del usuario sea un número entero o sea cero.
      * @param sc: Se usa para leer el ingreso de datos del usuario.
      * @return int: Un número entero validado.
      */
-
     public static int validarIngresoEnterosYCero(Scanner sc) {
         int validarIngreso;
         while (true) {
@@ -110,11 +108,13 @@ public class Validadores {
         return validarIngreso;
     }
 
+    
     /**
      * Valida que la entrada del usuario sea una vocal minuscula
      * @param scanner: Se usa para leer el ingreso de datos del usuario.
      * @return char: Una letra minúscula validada.
      */
+
     public static char validarIngresoVocal(Scanner scanner) {
         char validarIngreso;
         while (true) {
