@@ -88,10 +88,10 @@ public class SecuenciasNumericas{
         System.out.println();
     }
 
-    public void g2_crearSerieNum8(int tamanoS8 ){ //Gamboa Anthony
+    public void g2_crearSerieNum8(int tamanoS8){ //Gamboa Anthony
         int c = 5;
         int d = 3;
-        for(int i = 0; i <= tamanoS8; i++){
+        for(int i = 0; i < tamanoS8; i++){
             int result = d + (i * c);
             System.out.print(result + " ");
         }
@@ -112,7 +112,7 @@ public class SecuenciasNumericas{
 
     public void g2_crearSerieNum10(int tamanio){  //Fuentes Carlos
         int numeroTres = 3;
-        while (numeroTres <= tamanio) {
+        for(int i = 0; i < tamanio; i++) {
             System.out.print(numeroTres + " ");
             numeroTres = numeroTres*3;
         }

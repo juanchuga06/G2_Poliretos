@@ -203,110 +203,90 @@ public class Automatas {
         }
     }
 
-    public int g2_cambiarCaracter(char c){ //ANTHONY GAMBOA
-        switch (c) {
-            case 'a':
-                return 0;
-            case 'b':
-                return 1;
-            case 'c':
-                return 2;
-        
-            default:
-                return - 1;
-        }
-        
-    }
+    public int g2_llamarAutomata2(String automata1) {
+        int estado = 0;
+        int columna;
+        char caracter;
+        int e = -1;
 
-    public int g2_cambiarCaracterClave(char c) {
-        if (c >= 65 && c <= 90) {
-            return 0;
+        int[][] mt = {
+            {1, e, e},
+            {e, 2, e},
+            {e, 2, 3},
+            {4, e, e},
+            {e, e, e},
+        };
+
+        int contadorB = 0;
+
+        for (int i = 0; i < automata1.length(); i++) {
+            caracter = automata1.charAt(i);
+            columna = g2_cambiarCaracter2(caracter);
+            if (columna == -1 || mt[estado][columna] == e) {
+                return -1;
+            }
+            estado = mt[estado][columna];
+
+            if (estado == 2 && caracter == 'b') {
+                contadorB++;
+            }
         }
-        if (c >= 97 && c <= 122) {
-            return 1;
-        }
-        if (c >= 48 && c <= 57) {
+
+        if (estado == 4 && contadorB >= 1) {
             return 2;
-        }
-        if ((c >= 33 && c <= 47) || (c >= 58 && c <= 64) || (c >= 91 && c <= 96) || (c >= 123 && c <= 126)) {
-            return 3;
         }
         return -1;
     }
 
-    public int g2_validarContraseña(String contraseña) { //Anthony Gamboa
-        int estado = 0;
-        int columna = 0;
-        int e = -1;
-        int[][] mt = {
-            {1, 2, 3, 4, e},
-            {1, 5, 5, 5, e},
-            {5, 2, 5, 5, e},
-            {5, 5, 3, 5, e},
-            {5, 5, 5, 4, e},
-            {5, 5, 5, 5, e},
-        };
-
-        for (int i = 0; i < contraseña.length(); i++) {
-            columna = g2_cambiarCaracterClave(contraseña.charAt(i));
-            if (columna == 4 || mt[estado][columna] == e) {
-                return -1;
-            }
-            estado = mt[estado][columna];
+    public void g2_crearAutomata2(String palabra) { //Anthony Gamboa
+        int resultado = g2_llamarAutomata2(palabra);
+        if (resultado == 2 || !palabra.contains(" ")) {
+            System.out.println("La palabra es correcta");
+        } else {
+            System.out.println("La palabra es incorrecta");
         }
-        if (estado != 5) {
-            return -1;
-        }
-        return 1;
     }
 
     public int g2_cambiarCaracter2(char c) {
         switch (c) {
-            case 'a': 
-                return 0;
-            case 'b':
-                return 1;
-            case 'c':
-                return 2;
-            default:
-                return -1;
+            case 'a': return 0;
+            case 'b': return 1;
+            case 'c': return 2;
+            default: return -1;
         }
-    }
-    
-    public int g2_llamarAutomata2(String automata1) {
-        int estadoInicial = 0;
-        int columna = 0;
-        char caracter = ' ';
-        int e = -1;
-        int mt[][] = {
-            {1, e, e,},
-            {e, 2, e,},
-            {e, 2, 3,},
-            {4, e, e},
-            {e, e, e},
-        }; 
-        for (int i = 0; i < automata1.length(); i++) {
-            caracter = automata1.charAt(i);
-            columna = g2_cambiarCaracter2(caracter);
-            if (columna == -1 || mt[estadoInicial][columna] == e) {
-                return -1;
-            }
-            estadoInicial = mt[estadoInicial][columna];
-        }
-        if (estadoInicial != 3) {
-            return -1;
-        }
-        return 2;
     }
 
-    public void g2_imprimirAutomata2(Scanner sc) {
-        System.out.print("Ingrese una palabra con a b c (ab+ca): ");
-        String automata1 = sc.next();
-        int resultado = g2_llamarAutomata2(automata1);
-        if (resultado == 2) {
-            System.out.println("La palabra sí es correcta");
-        } else {
-            System.out.println("La palabra es incorrecta");
+    private static int[][] transitions = {
+        
+        {0, 1, 2, 3}, 
+        {1, 1, 4, 5}, 
+        {2, 4, 2, 6}, 
+        {3, 5, 6, 3}, 
+        {4, 4, 4, 7},
+        {5, 5, 7, 5},
+        {6, 7, 6, 6},
+        {7, 7, 7, 7}
+    };
+
+    public void g2_crearAutomata7(String contraseña) {
+        int estado = 0;
+
+        for (char c : contraseña.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                estado = transitions[estado][1];
+            } else if (Character.isDigit(c)) {
+                estado = transitions[estado][2];
+            } else if ("!@#$%^&*(),.?\":{}|<>".contains(String.valueOf(c))) {
+                estado = transitions[estado][3];
+            } else {
+                continue;
+            }
+
+            if (estado == 7) {
+                System.out.println("Contraseña Correcta");
+            }
         }
+
+        System.out.println("Contraseña incorrecta");
     }
 }

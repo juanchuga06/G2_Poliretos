@@ -24,41 +24,41 @@ public class App {
         SecuenciasNumericas os1 = new SecuenciasNumericas();
         System.out.println("----------------Ejercicios de las series numericas-----------------");
         
-        System.out.print("S1:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum1(tamanio); //Fuentes Carlos
+        // System.out.print("S1:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum1(tamanio); //Fuentes Carlos
 
-        System.out.print("S2:   Ingrese el rango de la operacion a realizar: ");
-        rango= Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum2(rango); //ChavezMayerli
+        // System.out.print("S2:   Ingrese el rango de la operacion a realizar: ");
+        // rango= Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum2(rango); //ChavezMayerli
 
-        System.out.print("S3:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum3(tamanio); //Chugá Juan
+        // System.out.print("S3:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum3(tamanio); //Chugá Juan
 
-        System.out.print("S4:   Ingrese el rango de la operacion a realizar: ");
-        rango = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum4(rango); //ChavezMayerli
+        // System.out.print("S4:   Ingrese el rango de la operacion a realizar: ");
+        // rango = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum4(rango); //ChavezMayerli
 
-        System.out.print("S5:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum5(tamanio); //Chugá Juan
+        // System.out.print("S5:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum5(tamanio); //Chugá Juan
 
-        System.out.print("S6:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum6(tamanio); //Anthony Gamboa        
+        // System.out.print("S6:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum6(tamanio); //Anthony Gamboa        
 
-        System.out.print("S7:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum7(tamanio); //Fuentes Carlos
+        // System.out.print("S7:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum7(tamanio); //Fuentes Carlos
 
-        System.out.print("S8:   Ingrese el tamanio de la serie: ");
-        tamanio = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum8(tamanio); //Anthony Gamboa
+        // System.out.print("S8:   Ingrese el tamanio de la serie: ");
+        // tamanio = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum8(tamanio); //Anthony Gamboa
         
-        System.out.print("S9:   Ingrese el rango de la operacion a realizar: ");
-        rango = Validadores.validarIngresoEnteros(scanner);
-        os1.g2_crearSerieNum9(rango); //ChavezMayerli
+        // System.out.print("S9:   Ingrese el rango de la operacion a realizar: ");
+        // rango = Validadores.validarIngresoEnteros(scanner);
+        // os1.g2_crearSerieNum9(rango); //ChavezMayerli
 
         System.out.print("S10:   Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -260,7 +260,7 @@ public class App {
         os5.g2_crearLoadingSecuence5(); //ChavezMayerli
 
         System.out.println("L6: ");
-        os5.g2_crearLoadingSecuence6(20,"<=>"); //Fuentes Carlos
+        os5.g2_crearLoadingSecuence6(); //Fuentes Carlos
         
         System.out.println("L7: ");
         os5.g2_crearLoadingSecuence7(); //Chugá Juan
@@ -335,9 +335,9 @@ public class App {
         palabra = scanner.nextLine(); 
         os7.g2_crearAutomata1(palabra); //Chugá Juan
 
-        System.out.println("A2:");
-        os7.g2_imprimirAutomata2(scanner);//Anthony Gamboa
-        scanner.nextLine();
+        System.out.print("A2:   Ingrese una palabra con a, b, c (formato: ab+ca): ");
+        palabra = scanner.nextLine();
+        os7.g2_crearAutomata2(palabra);
 
         System.out.print("A3:  Ingrese su palabra (a+/b+/c+): ");
         palabra = scanner.nextLine();
@@ -355,16 +355,11 @@ public class App {
         entrada2 = scanner.nextLine();
         os7.g2_crearAutomata5(entrada2); //Chavez Mayerli
 
-        //A6:
+        // // A6:
 
-        System.out.println("A7:\nIngrese una contraseña:");//ANTHONY GAMBOA
-        String contraseña = scanner.nextLine();
-        int resultado1 = os7.g2_validarContraseña(contraseña);
-        if (resultado1 == 1) {
-            System.out.println("Su contraseña es válida");
-        } else {
-            System.out.println("Su contraseña no es válida");
-        }
+        System.out.print("A7:  Ingrese una contraseña para validar: ");//ANTHONY GAMBOA
+        String contrasena = scanner.nextLine();
+        os7.g2_crearAutomata7(contrasena);
 
         System.out.println("----------------Ejercicios de Arrays------------------");
         Arreglos os8 = new Arreglos();
@@ -397,5 +392,6 @@ public class App {
         os8.g2_crearArreglo5(frase); //Chugá Juan 
 
         System.out.println("Cierre del programa!");
+        scanner.close();
     }
 }

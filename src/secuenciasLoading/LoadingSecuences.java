@@ -128,34 +128,59 @@ public class LoadingSecuences {
         System.out.println("\n¡Carga completa!\n");
     }
 
-    public void g2_crearLoadingSecuence6(int totalCaracteres, String barra) throws InterruptedException { // Fuentes Carlos
+    public void g2_crearLoadingSecuence6() throws InterruptedException { // Fuentes Carlos
+        int anchoBarra = 20; // Ancho total de la barra
+        int posicion = 0; // Posición inicial de la barra
+        boolean moviendoDerecha = true; // Indica la dirección del movimiento
+        int porcentaje = 0; // Porcentaje de progreso
 
-        for (int posicion = 0; posicion <= totalCaracteres - barra.length(); posicion++) {
-            int espaciosAntes = posicion;
-            int espaciosDespués = totalCaracteres - posicion - barra.length();
-
-            StringBuilder barraProgreso = new StringBuilder("[");
-            for (int j = 0; j < espaciosAntes; j++) {
-                barraProgreso.append(" ");
+        // Simulación del movimiento de la barra
+        while (porcentaje <= 100) {
+            // Construir la barra
+            StringBuilder barra = new StringBuilder("[");
+            for (int j = 0; j < anchoBarra - 3; j++) {
+                if (j == posicion) {
+                    barra.append("<=>");
+                    j += 2; // Aumentar el índice para saltar los caracteres de "<=>"
+                } else {
+                    barra.append(" ");
+                }
             }
-            barraProgreso.append(barra);
-            for (int j = 0; j < espaciosDespués; j++) {
-                barraProgreso.append(" ");
-            }
-            barraProgreso.append("]");
+            barra.append("] "); // Cerrar la barra
 
-            int porcentaje = (posicion * 100) / (totalCaracteres - barra.length());
+            // Limpiar la consola y mostrar la barra
+            System.out.print("\r" + barra.toString() + porcentaje + "%");
 
-            System.out.print("\r" + barraProgreso.toString() + " " + porcentaje + "%");
-            System.out.flush();
-
-            // Espera 200 ms
+            // Esperar un poco para ver el efecto
             try {
-                Thread.sleep(400);
+                Thread.sleep(100); // Espera 100 ms
             } catch (InterruptedException e) {
-                System.out.println("Error en la ejecucion");
+                Thread.currentThread().interrupt();
+            }
+
+            // Actualizar la posición
+            if (moviendoDerecha) {
+                posicion++;
+                if (posicion >= anchoBarra - 3) { // Si llega al final, cambiar dirección
+                    moviendoDerecha = false;
+                }
+            } else {
+                posicion--;
+                if (posicion <= 0) { // Si llega al inicio, cambiar dirección
+                    moviendoDerecha = true;
+                }
+            }
+
+            // Incrementar el porcentaje de progreso
+            if (porcentaje < 100) {
+                porcentaje++; // Incrementar el porcentaje
+            }else{
+                break;
             }
         }
+
+        // Asegurarse de que la barra esté en la posición final antes de salir
+        System.out.print("\r[<=>] 100%\n");
     }
 
     public void g2_crearLoadingSecuence7() { // Chugá Juan
@@ -201,58 +226,62 @@ public class LoadingSecuences {
     }
 
     public void g2_crearLoadingSecuence9(String nombreCompleto) { // Fuentes Carlos
-        int longitud = nombreCompleto.length();
+        System.out.println(nombreCompleto);
 
-        for (int i = 0; i < longitud; i++) {
-            System.out.println(nombreCompleto.charAt(i));
-
-            int porcentaje = (i + 1) * 100 / longitud;
+        int totalCaracteres = nombreCompleto.length();
+        
+        for (int i = 0; i < totalCaracteres; i++) {
+           
+            char letraActual = nombreCompleto.charAt(i);
             
-            System.out.print(" " + porcentaje + "% ");
-
+            int porcentajeCarga = (i + 1) * 100 / totalCaracteres;
+            
+            System.out.printf("\r%c %d%%", letraActual, porcentajeCarga);
+            
             try {
-                Thread.sleep(500); // Pausa de 0.5 segundo
+                Thread.sleep(500); // Espera 500 ms
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
-        System.out.println(" ");
+       
+        System.out.println(); 
     }
 
     public void g2_crearLoadingSecuence10() { // Fuentes Carlos
-       Random random = new Random();
-        int tamanioArchivo = random.nextInt(91) + 10; // Genera un número entre 10 y 100
-        String nombreArchivo = "ArchivoYarl-win_amd64.whl";
-
-        int cargado = 0;
-        int barraLargo = 40; 
-
-        System.out.printf("Downloading %s (%d kB)%n", nombreArchivo, tamanioArchivo);
-
-        while (cargado < tamanioArchivo) {
-            cargado += random.nextInt(5) + 1; 
-            if (cargado > tamanioArchivo) {
-                cargado = tamanioArchivo; 
-            }
-
-            double porcentaje = (double) cargado / tamanioArchivo;
-            int barraCompletada = (int) (barraLargo * porcentaje);
-            int barraRestante = barraLargo - barraCompletada;
-
-            String barra = "-".repeat(barraCompletada) + " ".repeat(barraRestante);
-
-            System.out.printf("\r%s %d / %d kB", barra, cargado, tamanioArchivo);
-            System.out.flush();
-
-            try {
-                Thread.sleep(200); // Esperar 200 ms
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-
-        System.out.println("\nCarga completada.");
-    }
+        Random random = new Random();
+         int tamanioArchivo = random.nextInt(91) + 10; // Genera un número entre 10 y 100
+         String nombreArchivo = "ArchivoYarl-win_amd64.whl";
+ 
+         int cargado = 0;
+         int barraLargo = 40; 
+ 
+         System.out.printf("Downloading %s (%d kB)%n", nombreArchivo, tamanioArchivo);
+ 
+         while (cargado < tamanioArchivo) {
+             cargado += random.nextInt(5) + 1; 
+             if (cargado > tamanioArchivo) {
+                 cargado = tamanioArchivo; 
+             }
+ 
+             double porcentaje = (double) cargado / tamanioArchivo;
+             int barraCompletada = (int) (barraLargo * porcentaje);
+             int barraRestante = barraLargo - barraCompletada;
+ 
+             String barra = "-".repeat(barraCompletada) + " ".repeat(barraRestante);
+ 
+             System.out.printf("\r%s %d / %d kB", barra, cargado, tamanioArchivo);
+             System.out.flush();
+ 
+             try {
+                 Thread.sleep(200); // Esperar 200 ms
+             } catch (InterruptedException e) {
+                 Thread.currentThread().interrupt();
+             }
+         }
+ 
+         System.out.println("\nCarga completada.");
+     }
 
     public void g2_crearLoadingSecuence11() { // Chugá Juan
         int valor_maximo = 10, valor_minimo = 0, tamanio = 50;
