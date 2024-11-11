@@ -125,7 +125,7 @@ public class App {
         System.out.println("----------------Ejercicios de Loading------------------");
         LoadingSecuences os5 = new LoadingSecuences();
         os5.g2_crearLoadingSecuence1(); //Chugá Juan
-        os5.g2_crearLoadingSecuence6(20,"<=>"); //Fuentes Carlos
+        os5.g2_crearLoadingSecuence6(); //Fuentes Carlos
         os5.g2_crearLoadingSecuence7(); //Chugá Juan
         System.out.println("Ingrese su nombre y Apellido:");
         String nombre = scanner.nextLine();
