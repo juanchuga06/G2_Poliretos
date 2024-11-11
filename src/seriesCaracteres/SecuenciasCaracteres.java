@@ -20,7 +20,7 @@ public class SecuenciasCaracteres {
             for (int j = 1; j <= actual; j++) {
                 System.out.print(caracterCf);
             }
-            System.out.println();
+            System.out.print(" ");
             if (actual > tamanio) {
                 break;
             }
