@@ -20,7 +20,7 @@ public class SecuenciasCaracteres {
             for (int j = 1; j <= actual; j++) {
                 System.out.print(caracterCf);
             }
-            System.out.println();
+            System.out.print(" ");
             if (actual > tamanio) {
                 break;
             }
@@ -32,8 +32,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar3(int valor){ //Mayerli Chavez
-        System.out.println("");
-        System.out.println("La operacion es: ");
         for (int i = 2; i <= valor; i++) {
             int contador = 2;
             boolean primo= true;
@@ -119,19 +117,18 @@ public class SecuenciasCaracteres {
     }
 
     public  void g2_crearSerieChar6(int tamanoCara){//ANTHONY GAMBOA
-        char [] abecedario= new char[tamanoCara];
-        char letra =  'a';
-
-           for(int j = 0; j < tamanoCara; j++){
-               if( letra <= 'z'){
-                   abecedario[j]= letra;
-                   letra++;
-               }else{
-                abecedario[j] = ' ';   
-               }
-               System.out.print(abecedario[j] + " ");
-           }
-           System.out.println();
+            char [] abecedario= new char[tamanoCara];
+            char letra =  'a';
+               for(int j = 0; j < tamanoCara; j++){
+                   if( letra <= 'z'){
+                       abecedario[j]= letra;
+                       letra++;
+                   }else{
+                    abecedario[j] = ' ';   
+                   }    
+                   System.out.print(abecedario[j] + " ");
+                }
+                System.out.println();
     }
 
     public void g2_crearSerieChar7(int tamanio){ //Chugá Juan
@@ -150,9 +147,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar8(int valor){ //Mayerli Chavez
-        System.out.println("");
-        System.out.println("La operacion es: ");
-        
         int numeroletra = 97;
         for (int i = 1; i <= valor; i++) {
             int indiceserie = 1;

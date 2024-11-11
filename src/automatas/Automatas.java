@@ -185,7 +185,7 @@ public class Automatas {
      return -1;
     }
    
-    @SuppressWarnings("resource")
+
     private int getIndexAlfabeto2(String digito) {
         char c = digito.charAt(0);
 

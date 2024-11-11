@@ -56,6 +56,7 @@ public class Arreglos {
     }
 
     public void g2_crearArreglo3(String nombre){ //Chavez Mayerli
+        System.out.println();
         int longitud = nombre.length();
         int altura= 2 * (longitud);
         for (int ejey = altura; ejey >= 0; ejey--) {
@@ -75,7 +76,7 @@ public class Arreglos {
         System.out.println("\n");
     }
 
-    public void g2_crearArreglo4(String nombre, String apellido){
+    public void g2_crearArreglo4(String nombre, String apellido){ //lGamboa Anthony
         int tamanio = Math.max(nombre.length(), apellido.length());
 
         char [][] matriz = new char[tamanio][tamanio];

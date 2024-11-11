@@ -7,6 +7,7 @@ public class LoadingSecuences {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
 
     public static final String Figura = "     \\|||/\n     (> <)\n  ooO-(_)-Ooo";
 
@@ -84,6 +85,7 @@ public class LoadingSecuences {
     }
 
     public void g2_crearLoadingSecuence4(int duracion){ //Gamboa Anthony
+        duracion = duracion * 10;
         String[]patrones = {"o0o", "0o0", "oo0", "o0o"};
         int progreso = 0;
         while (progreso <= 100) {
@@ -138,10 +140,10 @@ public class LoadingSecuences {
         while (porcentaje <= 100) {
             // Construir la barra
             StringBuilder barra = new StringBuilder("[");
-            for (int j = 0; j < anchoBarra - 3; j++) {
+            for (int j = 0; j < anchoBarra + 1; j++) {
                 if (j == posicion) {
                     barra.append("<=>");
-                    j += 2; // Aumentar el índice para saltar los caracteres de "<=>"
+                    j += 3; // Aumentar el índice para saltar los caracteres de "<=>"
                 } else {
                     barra.append(" ");
                 }
@@ -178,9 +180,9 @@ public class LoadingSecuences {
                 break;
             }
         }
-
+        System.out.println();
         // Asegurarse de que la barra esté en la posición final antes de salir
-        System.out.print("\r[<=>] 100%\n");
+        
     }
 
     public void g2_crearLoadingSecuence7() { // Chugá Juan
@@ -250,7 +252,7 @@ public class LoadingSecuences {
 
     public void g2_crearLoadingSecuence10() { // Fuentes Carlos
         Random random = new Random();
-         int tamanioArchivo = random.nextInt(91) + 10; // Genera un número entre 10 y 100
+         int tamanioArchivo = (int)(Math.random()*((100 - 10 + 1) + 10)); // Genera un número entre 10 y 100
          String nombreArchivo = "ArchivoYarl-win_amd64.whl";
  
          int cargado = 0;
@@ -268,7 +270,7 @@ public class LoadingSecuences {
              int barraCompletada = (int) (barraLargo * porcentaje);
              int barraRestante = barraLargo - barraCompletada;
  
-             String barra = "-".repeat(barraCompletada) + " ".repeat(barraRestante);
+             String barra = ANSI_GREEN + "-".repeat(barraCompletada) + " ".repeat(barraRestante) + ANSI_RESET;
  
              System.out.printf("\r%s %d / %d kB", barra, cargado, tamanioArchivo);
              System.out.flush();
@@ -304,13 +306,15 @@ public class LoadingSecuences {
         }
     }
     
-    public  void g2_crearLoadingSecuence11REPETIDO(int numBar) {
-        Random random = new Random();
+    public  void g2_crearLoadingSecuence11REPETIDO() {
+        int numBar = 10;
         int[] heights = new int[numBar];
 
         for (int i = 0; i < numBar; i++) {
-            heights[i] = random.nextInt(9); 
+            heights[i] = (int)(Math.random()*((8 - 0 + 1) + 0)); 
+            System.out.print(heights[i] + ", ");
         }
+        System.out.println();
 
         for (int level = 8; level >= 0; level--) {
             StringBuilder line = new StringBuilder();
