@@ -32,8 +32,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar3(int valor){ //Mayerli Chavez
-        System.out.println("");
-        System.out.println("La operacion es: ");
         for (int i = 2; i <= valor; i++) {
             int contador = 2;
             boolean primo= true;
@@ -157,9 +155,6 @@ public class SecuenciasCaracteres {
     }
 
     public void g2_crearSerieChar8(int valor){ //Mayerli Chavez
-        System.out.println("");
-        System.out.println("La operacion es: ");
-        
         int numeroletra = 97;
         for (int i = 1; i <= valor; i++) {
             int indiceserie = 1;

@@ -5,7 +5,6 @@ public class SecuenciasNumericas{
     public void g2_crearSerieNum1(int tamanio){  //Fuentes Carlos
         int n = tamanio;
         int a = 0, b = 1, c;
-        System.out.print("SN1 es: ");
         for (int i = 0; i < n; i++) {
             System.out.print(a + " ");
             c = a + b;
@@ -16,8 +15,6 @@ public class SecuenciasNumericas{
     }
 
     public void g2_crearSerieNum2(int rango){ //Mayerli Chavez
-        System.out.println();
-        System.out.println("La operacion es: ");
         for (int i = 1; i <= rango; i++) {
             if((i % 2) != 0){
                 System.out.print(i + " ");
@@ -81,7 +78,6 @@ public class SecuenciasNumericas{
     
     public void g2_crearSerieNum7(int tamanio){  //Fuentes Carlos
         int n = tamanio;
-        System.out.print("SN7 es: ");
         for (int i = 0; i < n; i++) {
             System.out.print((1 + 3 * i) + " ");
         }
@@ -99,8 +95,6 @@ public class SecuenciasNumericas{
     }
    
     public void g2_crearSerieNum9(int rango){ //Mayerli Chavez
-        System.out.println();
-                System.out.println("La operacion es: ");
                 double n=1d;
                 while ( n <= rango){
                     double cuadrado = Math.pow(2,n);

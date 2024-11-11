@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
  /**
   * Clase que proporciona validaciones de ingreso de diferentes datos(int, char)
