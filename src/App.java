@@ -87,8 +87,8 @@ public class App {
         tamanio = Validadores.validarIngresoEnteros(scanner);
         os2.g2_crearSerieChar4(tamanio); //Anthony Gamboa 
 
-        System.out.print("SC5:  Ingrese el caracter para la serie: ");
-        caracterCf=Validadores.validarIngresoCaracteres(scanner);
+        System.out.print("SC5:  Ingrese el tamanio de la serie: ");
+        tamanio = Validadores.validarIngresoEnteros(scanner);
         os2.g2_crearSerieChar5(tamanio); //Chugá Juan
 
         System.out.print("SC6:  Ingrese el tamanio de la serie: ");

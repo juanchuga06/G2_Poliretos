@@ -119,27 +119,20 @@ public class SecuenciasCaracteres {
     }
 
     public  void g2_crearSerieChar6(int tamanoCara){//ANTHONY GAMBOA
-        char[][] abecedario= new char[1][8];
-       char letra =  'a';
+        char [] abecedario= new char[tamanoCara];
+        char letra =  'a';
 
-       for(int i = 0; i < 1; i++){
            for(int j = 0; j < tamanoCara; j++){
                if( letra <= 'z'){
-                   abecedario[i][j] = letra;
+                   abecedario[j]= letra;
                    letra++;
                }else{
-                abecedario[i][j] = ' ';   
+                abecedario[j] = ' ';   
                }
-           }
-       }
-
-       for(int i = 0; i < 1; i++){ //ANTHONY GAMBOA
-           for(int j = 0; j < tamanoCara; j++){
-               System.out.print(abecedario[i][j] + " ");
+               System.out.print(abecedario[j] + " ");
            }
            System.out.println();
-       }
-   }
+    }
 
     public void g2_crearSerieChar7(int tamanio){ //Chugá Juan
         char letra = 97;

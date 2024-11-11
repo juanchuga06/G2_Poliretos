@@ -113,14 +113,24 @@ public class Figuras {
     }
 
     public void g2_crearFigura9(int tamaño){ //Fuentes Carlos
+        for(int i = 0; i < tamaño; i++){
+            System.out.print("    ");
+        }
+        tamaño--;
+        System.out.println("___");
         for (int i = tamaño; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 System.out.print("    ");
             }
                 System.out.print("___|");
             for (int j = 0; j < tamaño - i; j++) {
-                System.out.print("        ");
+                System.out.print("    ");
             }
+            System.out.print("   ");
+            for (int j = 0; j < tamaño - i; j++) {
+                System.out.print("    ");
+            }
+
                 System.out.print("|___");
                 System.out.println();
         }
@@ -143,22 +153,21 @@ public class Figuras {
         System.out.println();
     }
     
-    public void g2_crearFigura11(int tamaño){ //Fuentes Carlos
-        tamaño = tamaño + 1;
-        for (int x = 2; x <= tamaño; x++) {
-            for (int i = 0; i < tamaño - x; i++) {
+    public void g2_crearFigura11(int tamanio){ //Fuentes Carlos
+        System.out.println("|_");
+        int aux = 0;
+        for (int x = 2; x <= tamanio; x++) {
+            aux = aux + x;
+            for (int i = 0; i < aux; i++) {
                 System.out.print(" ");
             }
                 System.out.print("|");
 
-            for (int j = 1; j < x; j++) {
+            for (int j = 0; j < x; j++) {
                 System.out.print("_");
             }
                 System.out.println();
 
-            for (int k = 1; k < x; k++) {
-                System.out.print("  "); 
-            }
         }
                 System.out.println(); 
         
