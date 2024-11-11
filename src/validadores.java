@@ -28,11 +28,13 @@ public class Validadores {
         return validarIngreso;
     }
 
-    /**
+
+     /**
      * Valida que la entrada del usuario sea un número entero o sea cero.
      * @param sc: Se usa para leer el ingreso de datos del usuario.
      * @return int: Un número entero validado.
      */
+
     public static int validarIngresoEnterosYCero(Scanner sc) {
         int validarIngreso;
         while (true) {
