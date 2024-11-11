@@ -56,6 +56,7 @@ public class Arreglos {
     }
 
     public void g2_crearArreglo3(String nombre){ //Chavez Mayerli
+        System.out.println();
         int longitud = nombre.length();
         int altura= 2 * (longitud);
         for (int ejey = altura; ejey >= 0; ejey--) {
@@ -77,6 +78,7 @@ public class Arreglos {
 
     public void g2_crearArreglo4(String nombre, String apellido){ //Gamboa Anthony
         int length = Math.max(nombre.length(), apellido.length());
+        System.out.println();
 
         for(int i = 0; i < length; i++){
             for(int j = 0; j < length; j++){

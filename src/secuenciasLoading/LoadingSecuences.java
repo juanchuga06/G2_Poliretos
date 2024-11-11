@@ -149,13 +149,13 @@ public class LoadingSecuences {
             System.out.print("\r" + barraProgreso.toString() + " " + porcentaje + "%");
             System.out.flush();
 
-            // Espera 200 ms
             try {
                 Thread.sleep(400);
             } catch (InterruptedException e) {
                 System.out.println("Error en la ejecucion");
             }
         }
+        System.out.println();
     }
 
     public void g2_crearLoadingSecuence7() { // Chugá Juan
