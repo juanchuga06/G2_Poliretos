@@ -180,7 +180,7 @@ public class LoadingSecuences {
                 break;
             }
         }
-        System.out.println("¡Carga completa!\n");
+        System.out.println("\n¡Carga completa!\n");
         // Asegurarse de que la barra esté en la posición final antes de salir
         
     }

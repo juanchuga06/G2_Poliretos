@@ -80,15 +80,15 @@ public class App {
         System.out.println("----------------Ejercicios de la serie de caracteres-----------------");
         SecuenciasCaracteres os2 = new SecuenciasCaracteres();
 
-        // System.out.print("SC1:   Ingrese el tamanio de la serie: ");
-        // tamanio = Validadores.validarIngresoEnteros(scanner);
-        // os2.g2_crearSerieChar1(tamanio); //Chugá Juan
-        // System.out.println();
+        System.out.print("SC1:   Ingrese el tamanio de la serie: ");
+        tamanio = Validadores.validarIngresoEnteros(scanner);
+        os2.g2_crearSerieChar1(tamanio); //Chugá Juan
+        System.out.println();
 
-        // System.out.print("SC2:   Ingrese el tamanio de la serie: ");
-        // tamanio = Validadores.validarIngresoEnteros(scanner);
-        // os2.g2_crearSerieChar2(tamanio, caracterCf); //Fuentes Carlos
-        // System.out.println();
+        System.out.print("SC2:   Ingrese el tamanio de la serie: ");
+        tamanio = Validadores.validarIngresoEnteros(scanner);
+        os2.g2_crearSerieChar2(tamanio, caracterCf); //Fuentes Carlos
+        System.out.println();
 
         System.out.print("SC3:   Ingrese el rango de la serie: ");
         valor= Validadores.validarIngresoEnteros(scanner); 
@@ -247,7 +247,7 @@ public class App {
         System.out.print("CC4:   Ingrese una frase de su preferencia: ");
         frase = scanner.nextLine();
         System.out.print("Ingresa una letra a eliminar: ");
-        letraAEliminar = Validadores.validarIngresoLetra(scanner);
+        letraAEliminar = scanner.nextLine().charAt(0);
         os4.g2_crearCadenaChar4(frase, letraAEliminar);
         System.out.println("");
         scanner.nextLine();

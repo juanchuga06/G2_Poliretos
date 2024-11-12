@@ -285,10 +285,10 @@ public class Automatas {
             }
         }
         if (estado == 7) {
-            System.out.println("Contrasena Correcta");
+            System.out.println("Contrasena valida");
         } else
         {
-            System.out.println("Contrasena incorrecta");
+            System.out.println("Contrasena no valida");
         }      
     }
 }

@@ -34,6 +34,11 @@ public class Recursivo {
     
     public int g2_crearRecursion4(int base, int potencia){ //Mayerli Chavez
         int resultado;
+        if(base == 0 && potencia == 0)
+        {
+            System.out.println("Indeterminado");
+            return 0;
+        }
         if( base == 0){
          resultado = 0;
         }else{

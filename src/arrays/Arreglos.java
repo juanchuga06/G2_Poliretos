@@ -107,9 +107,13 @@ public class Arreglos {
     
     public void g2_crearArreglo5(String nombre_completo){ //Chugá Juan
         String [] nombres = new String[4];
+        for (int index = 0; index < 4; index++) {
+            nombres[index] = " ";
+        }
         Scanner scanlinea = new Scanner(nombre_completo).useDelimiter(" ");
         for(int index = 0; index < nombres.length; index++){
-            nombres[index] = scanlinea.next();
+            if (scanlinea.hasNext())
+                nombres[index] = scanlinea.next();
         }
         int valor_maximo = nombres[0].length(), valor_minimo = 0, x, y;
         char [][] Matriz = new char[valor_maximo][valor_maximo];
