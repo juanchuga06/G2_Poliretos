@@ -19,7 +19,7 @@ public class App {
         String palabra;
         char letraAEliminar;
         double porcent1, porcent2, porcent3, porcent4;
-        System.out.println("----------------Ejercicios de las series numericas-----------------");//Fuentes Carlos
+       /*  System.out.println("----------------Ejercicios de las series numericas-----------------");//Fuentes Carlos
         SecuenciasNumericas os1 = new SecuenciasNumericas();
         System.out.print("Ingrese el tamanio de la serie: ");
         tamanio = Validadores.validarIngresoEnteros(scanner);
@@ -146,7 +146,7 @@ public class App {
         int limite_superior = scanner.nextInt();
         os6.g2_crearRecursion5(0, limite_superior); //Chugá Juan
         scanner.nextLine();
-        
+         */
         System.out.println("----------------Ejercicios de Automatas------------------");
         Automatas os7 = new Automatas();
         System.out.print("Ingrese su palabra: ");
@@ -155,8 +155,11 @@ public class App {
         System.out.print("Ingrese su palabra: ");
         palabra = scanner.nextLine();
         os7.g2_crearAutomata3(palabra); //Chugá Juan
+        System.out.print("Ingrese su palabra: ");
+        palabra = scanner.nextLine();
+        os7.g2_crearAutomata6(palabra); //Fuentes Carlos
 
-        System.out.println("----------------Ejercicios de Arrays------------------");
+       /*  System.out.println("----------------Ejercicios de Arrays------------------");
         Arreglos os8 = new Arreglos();
         System.out.println("Ingrese 4 porcentajes: ");
         porcent1 = Validadores.validarIngresoDouble(scanner);
@@ -172,6 +175,6 @@ public class App {
         System.out.print("Ingrese su nombre completo(con espacios): ");
         frase = scanner.nextLine();
         os8.g2_crearArreglo5(frase); //Chugá Juan
-        
+         */
     }
 }

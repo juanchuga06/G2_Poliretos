@@ -22,58 +22,57 @@ public class LoadingSecuences {
     }
 
     public void g2_crearLoadingSecuence6() throws InterruptedException { // Fuentes Carlos
-        int anchoBarra = 20; // Ancho total de la barra
-        int posicion = 0; // Posición inicial de la barra
-        boolean moviendoDerecha = true; // Indica la dirección del movimiento
-        int porcentaje = 0; // Porcentaje de progreso
+        int anchoBarra = 20;
+        int posicion = 0;
+        boolean moviendoDerecha = true; 
+        int porcentaje = 0; 
 
-        // Simulación del movimiento de la barra
+        
         while (porcentaje <= 100) {
-            // Construir la barra
+          
             StringBuilder barra = new StringBuilder("[");
             for (int j = 0; j < anchoBarra - 3; j++) {
                 if (j == posicion) {
                     barra.append("<=>");
-                    j += 2; // Aumentar el índice para saltar los caracteres de "<=>"
+                    j += 2; 
                 } else {
                     barra.append(" ");
                 }
             }
-            barra.append("] "); // Cerrar la barra
+            barra.append("] "); 
 
-            // Limpiar la consola y mostrar la barra
+            
             System.out.print("\r" + barra.toString() + porcentaje + "%");
 
-            // Esperar un poco para ver el efecto
+            
             try {
-                Thread.sleep(100); // Espera 100 ms
+                Thread.sleep(100); 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
 
-            // Actualizar la posición
+     
             if (moviendoDerecha) {
                 posicion++;
-                if (posicion >= anchoBarra - 3) { // Si llega al final, cambiar dirección
+                if (posicion >= anchoBarra - 3) { 
                     moviendoDerecha = false;
                 }
             } else {
                 posicion--;
-                if (posicion <= 0) { // Si llega al inicio, cambiar dirección
+                if (posicion <= 0) { 
                     moviendoDerecha = true;
                 }
             }
 
-            // Incrementar el porcentaje de progreso
+            
             if (porcentaje < 100) {
-                porcentaje++; // Incrementar el porcentaje
+                porcentaje++; 
             }else{
                 break;
             }
         }
 
-        // Asegurarse de que la barra esté en la posición final antes de salir
-        System.out.print("\r[<=>] 100%\n");
+      
     }
     
 
