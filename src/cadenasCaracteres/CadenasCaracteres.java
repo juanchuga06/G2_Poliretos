@@ -62,12 +62,19 @@ public class CadenasCaracteres {
       System.out.print("Ingresa un anagrama de la palabra: ");
       
       String anagramaIngresado = scanner.nextLine();
-      
+      int contador = 0;
       if (esAnagrama(palabraSeleccionada, anagramaIngresado)) {
           System.out.println("¡Correcto! \"" + anagramaIngresado + "\" es un anagrama de \"" + palabraSeleccionada + "\".");
       } else {
-          System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".");
+          while(contador<=3){
+            System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".");
+            contador++;
+            if(contador == 3){
+                break;
+              }
+          }
       }
+      
     
     }
     public static boolean esAnagrama(String palabra1, String palabra2) {
