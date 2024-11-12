@@ -443,7 +443,9 @@ public class App {
         entrada2 = scanner.nextLine();
         os8.g2_crearAutomata5(entrada2); //Chavez Mayerli
 
-        // A6:
+        System.out.print("A6:  Ingrese un bucle para validar (if, else, ifelse, for, foreach): ");
+        palabra = scanner.nextLine();
+        os8.g2_crearAutomata6(palabra); //Fuentes Carlos
 
         System.out.print("A7:  Ingrese una contrasena para validar: ");//Gamboa Anthony
         String contrasena = scanner.nextLine();
