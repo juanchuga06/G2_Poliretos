@@ -41,7 +41,7 @@ public class LoadingSecuences {
             System.out.print("\r" + barra + porcetaje + "%");
 
             try{
-                Thread.sleep(200);
+                Thread.sleep(300);
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
@@ -155,7 +155,7 @@ public class LoadingSecuences {
 
             // Esperar un poco para ver el efecto
             try {
-                Thread.sleep(100); // Espera 100 ms
+                Thread.sleep(250); // Espera 100 ms
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -180,7 +180,7 @@ public class LoadingSecuences {
                 break;
             }
         }
-        System.out.println();
+        System.out.println("¡Carga completa!\n");
         // Asegurarse de que la barra esté en la posición final antes de salir
         
     }
@@ -224,7 +224,7 @@ public class LoadingSecuences {
                 System.out.println("Retraso completado ");
             }
         }
-        System.out.println();
+        System.out.println("¡Carga completa!\n");
     }
 
     public void g2_crearLoadingSecuence9(String nombreCompleto) { // Fuentes Carlos
@@ -247,7 +247,7 @@ public class LoadingSecuences {
             }
         }
        
-        System.out.println(); 
+        System.out.println("¡Carga completa!\n"); 
     }
 
     public void g2_crearLoadingSecuence10() { // Fuentes Carlos
@@ -330,6 +330,8 @@ public class LoadingSecuences {
     }
     
     public  void g2_crearLoadingSecuence12(int duracion1) { //Gamboa Anthony
+        duracion1 = duracion1 * 10;
+        System.out.println("\n");
         int maxPosicion = 20;
         for(int i = 0; i <=  maxPosicion; i++){
             imprimirFiguraConEspacios(i);

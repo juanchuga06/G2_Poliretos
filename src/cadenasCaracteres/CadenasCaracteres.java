@@ -26,7 +26,6 @@ public class CadenasCaracteres {
             }
         }
         System.out.println("La frase ingresada tiene " + contador_letra + " letras.");
-        System.out.println(" ");
     }
 
     public void g2_crearCadenaChar3(String frase, char letra){ //Chugá Juan
@@ -53,7 +52,7 @@ public class CadenasCaracteres {
         String fraseSinLetra = "";
 
         for (int i=0; i<frase.length(); i++){
-            char letraActual = frase.charAt(i);
+            char letraActual = frase.toLowerCase().charAt(i);
             if (letraActual==letraEliminada){
                 fraseSinLetra+=" ";
             } else {
@@ -63,7 +62,6 @@ public class CadenasCaracteres {
         System.out.println("Frase elegida: "+frase);
         System.out.println("Letra a eliminar: "+letraEliminada);
         System.out.println("Frase sin la letra: "+fraseSinLetra);
-        System.out.println();
     }
     
     public void g2_crearCadenaChar5(char frase []){ //Chugá Juan
@@ -103,23 +101,27 @@ public class CadenasCaracteres {
     }
 
     public void g2_crearCadenaChar8(){ //Fuentes Carlos
-      // Conjunto de palabras
-      String[] palabras = {"amor", "roma", "raton", "tron", "nora", "aron"};
-        
-      
-      String palabraSeleccionada = palabras[(int)(Math.random() * palabras.length)];
-      
-      System.out.println("Palabra seleccionada: " + palabraSeleccionada);
-      System.out.print("Ingresa un anagrama de la palabra: ");
-      
-      String anagramaIngresado = scanner.nextLine();
-      
-      if (esAnagrama(palabraSeleccionada, anagramaIngresado)) {
-          System.out.println("¡Correcto! \"" + anagramaIngresado + "\" es un anagrama de \"" + palabraSeleccionada + "\".");
-      } else {
-          System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".");
-      }
-    
+        // Conjunto de palabras
+        String[] palabras = {"amor", "roma", "raton", "tron", "nora", "aron"};
+        int intentos = 3;
+        String palabraSeleccionada = palabras[(int)(Math.random() * palabras.length)];
+
+        System.out.println("Palabra seleccionada: " + palabraSeleccionada);
+        while(intentos > 0)
+        {
+            System.out.println("Tienes " + intentos + " intentos. \n");
+            System.out.print("Ingresa un anagrama de la palabra \"" + palabraSeleccionada +"\": ");
+
+            String anagramaIngresado = scanner.nextLine();
+
+            if (esAnagrama(palabraSeleccionada, anagramaIngresado)) {
+                System.out.println("¡Correcto! \"" + anagramaIngresado + "\" es un anagrama de \"" + palabraSeleccionada + "\".");
+                break;
+            } else {
+                System.out.println("Incorrecto. \"" + anagramaIngresado + "\" no es un anagrama de \"" + palabraSeleccionada + "\".\n");
+            }
+            intentos--;
+        }
     }
     public static boolean esAnagrama(String palabra1, String palabra2) {
         

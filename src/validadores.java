@@ -1,10 +1,6 @@
 import java.util.Scanner;
- /**
-  * Clase que proporciona validaciones de ingreso de diferentes datos(int, char)
-  * @author: Grupo 2
-  */
-public class Validadores {
 
+public class Validadores{
     /**
      * Valida que la entrada del usuario sea un número entero.
      * @param sc: Se usa para leer el ingreso de datos del usuario.
@@ -27,6 +23,7 @@ public class Validadores {
         }
         return validarIngreso;
     }
+
 
     /**
      * Valida que la entrada del usuario sea un número entero o sea cero.
@@ -108,13 +105,11 @@ public class Validadores {
         return validarIngreso;
     }
 
-    
     /**
      * Valida que la entrada del usuario sea una vocal minuscula
      * @param scanner: Se usa para leer el ingreso de datos del usuario.
      * @return char: Una letra minúscula validada.
      */
-
     public static char validarIngresoVocal(Scanner scanner) {
         char validarIngreso;
         while (true) {

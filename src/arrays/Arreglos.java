@@ -29,13 +29,13 @@ public class Arreglos {
         }
     }
     
-    public void g2_crearArreglo2(int tamaño, char caracter){ //Fuentes Carlos
+    public void g2_crearArreglo2(int tamanio, char caracter){ //Fuentes Carlos
         System.out.println(" ");
         //mi nombre es Carlos Fuentes, por lo tanto se imprimira la C y la F
-        for (int i = 0; i < tamaño; i++) {
+        for (int i = 0; i < tamanio; i++) {
             //imprimir "C"
-            for (int j = 0; j < tamaño; j++) {
-                if (j == 0 || (i == 0 && j < tamaño) || (i == tamaño - 1 && j < tamaño)) {
+            for (int j = 0; j < tamanio; j++) {
+                if (j == 0 || (i == 0 && j < tamanio) || (i == tamanio - 1 && j < tamanio)) {
                     System.out.print(caracter);
                 } else {
                     System.out.print(" ");
@@ -44,8 +44,8 @@ public class Arreglos {
             System.out.print("   "); //Espaciado
 
             // Imprimir "F"
-            for (int j = 0; j < tamaño; j++) {
-                if (j == 0 || (i == 0 && j < tamaño) || (i == tamaño / 2 && j < tamaño)) {
+            for (int j = 0; j < tamanio; j++) {
+                if (j == 0 || (i == 0 && j < tamanio) || (i == tamanio / 2 && j < tamanio)) {
                     System.out.print(caracter);
                 } else {
                     System.out.print(" ");
@@ -73,7 +73,7 @@ public class Arreglos {
             }
             System.out.println();
         }
-        System.out.println("\n");
+        System.out.println();
     }
 
     public void g2_crearArreglo4(String nombre, String apellido){ //lGamboa Anthony
@@ -137,7 +137,6 @@ public class Arreglos {
             }
             System.out.println();
         }
-        System.out.println();
         scanlinea.close();
     }
 

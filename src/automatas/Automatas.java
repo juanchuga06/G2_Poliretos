@@ -53,6 +53,17 @@ public class Automatas {
                                    {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q11
                                    {e,     e,       e,     e,     e,       e,       e,       e,         e,       valido},//q12
                                 };
+        private static int[][] transitions = {
+
+        {0, 1, 2, 3}, 
+        {1, 1, 4, 5}, 
+        {2, 4, 2, 6}, 
+        {3, 5, 6, 3}, 
+        {4, 4, 4, 7},
+        {5, 5, 7, 5},
+        {6, 7, 6, 6},
+        {7, 7, 7, 7}
+        };
                                                         
 
     public void g2_crearAutomata1(String palabra){ //Chugá Juan
@@ -185,7 +196,6 @@ public class Automatas {
      return -1;
     }
    
-
     private int getIndexAlfabeto2(String digito) {
         char c = digito.charAt(0);
 
@@ -222,6 +232,10 @@ public class Automatas {
         for (int i = 0; i < automata1.length(); i++) {
             caracter = automata1.charAt(i);
             columna = g2_cambiarCaracter2(caracter);
+            if(caracter != 'a' || caracter != 'b' || caracter != 'c')
+            {
+                return -1;
+            } 
             if (columna == -1 || mt[estado][columna] == e) {
                 return -1;
             }
@@ -238,9 +252,9 @@ public class Automatas {
         return -1;
     }
 
-    public void g2_crearAutomata2(String palabra) { //Anthony Gamboa
+    public void g2_crearAutomata2(String palabra) { //Gamboa Anthony
         int resultado = g2_llamarAutomata2(palabra);
-        if (resultado == 2 || !palabra.contains(" ")) {
+        if (resultado == 2 && !palabra.contains(" ")) {
             System.out.println("La palabra es correcta");
         } else {
             System.out.println("La palabra es incorrecta");
@@ -256,37 +270,25 @@ public class Automatas {
         }
     }
 
-    private static int[][] transitions = {
-        
-        {0, 1, 2, 3}, 
-        {1, 1, 4, 5}, 
-        {2, 4, 2, 6}, 
-        {3, 5, 6, 3}, 
-        {4, 4, 4, 7},
-        {5, 5, 7, 5},
-        {6, 7, 6, 6},
-        {7, 7, 7, 7}
-    };
-
-    public void g2_crearAutomata7(String contraseña) {
+    public void g2_crearAutomata7(String contrasena) {
         int estado = 0;
 
-        for (char c : contraseña.toCharArray()) {
+        for (char c : contrasena.toCharArray()) {
             if (Character.isUpperCase(c)) {
                 estado = transitions[estado][1];
             } else if (Character.isDigit(c)) {
                 estado = transitions[estado][2];
-            } else if ("!@#$%^&*(),.?\":{}|<>".contains(String.valueOf(c))) {
+            } else if ("!@#$%^&*(),.?\":{}|<>-_=[]+/;~\\".contains(String.valueOf(c))) {
                 estado = transitions[estado][3];
             } else {
                 continue;
             }
-
-            if (estado == 7) {
-                System.out.println("Contraseña Correcta");
-            }
         }
-
-        System.out.println("Contraseña incorrecta");
+        if (estado == 7) {
+            System.out.println("Contrasena Correcta");
+        } else
+        {
+            System.out.println("Contrasena incorrecta");
+        }      
     }
 }

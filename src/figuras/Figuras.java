@@ -2,11 +2,11 @@ package figuras;
 
 public class Figuras {
 
-    public void g2_crearFigura1(int tamanoCuadrado) { //ANTHONY GAMBOA
+    public void g2_crearFigura1(int tamanioCuadrado) { //Gamboa Anthony
         System.out.println();
-        for(int i = 0; i < tamanoCuadrado; i++){
-            for(int j = 0; j < tamanoCuadrado; j++){
-                if((i == 0 || j == 0)||(i == tamanoCuadrado-1)||(j == tamanoCuadrado-1)){
+        for(int i = 0; i < tamanioCuadrado; i++){
+            for(int j = 0; j < tamanioCuadrado; j++){
+                if((i == 0 || j == 0)||(i == tamanioCuadrado-1)||(j == tamanioCuadrado-1)){
                     System.out.print("*");
                 }else{
                     System.out.print(" ");
@@ -16,11 +16,11 @@ public class Figuras {
         }
     }
 
-    public void g2_crearFigura2(int tamaño){ //Fuentes Carlos
+    public void g2_crearFigura2(int tamanio){ //Fuentes Carlos
         System.out.println();
-        for (int i = 0; i < tamaño; i++) {
-            for (int j = 0; j < tamaño; j++) {
-                if(i == 0 || i == tamaño -1 || j == 0 || j == tamaño - 1) {
+        for (int i = 0; i < tamanio; i++) {
+            for (int j = 0; j < tamanio; j++) {
+                if(i == 0 || i == tamanio -1 || j == 0 || j == tamanio - 1) {
                     if((i + j) % 2 == 0)
                         System.out.print("* ");
                     else
@@ -44,10 +44,10 @@ public class Figuras {
         }
     }
     
-    public void g2_crearFigura4(int tamaño){ //Fuentes Carlos
+    public void g2_crearFigura4(int tamanio){ //Fuentes Carlos
         System.out.println();
-        for (int i = 0; i < tamaño; i++) { 
-            for (int j = 0; j < tamaño - i - 1; j++) {
+        for (int i = 0; i < tamanio; i++) { 
+            for (int j = 0; j < tamanio - i - 1; j++) {
                 System.out.print("  ");
             }
             for (int k = 0; k <= i; k++) {
@@ -72,14 +72,14 @@ public class Figuras {
         System.out.println();
     }
 
-    public void g2_crearFigura6(int tamanoRombo){//ANTHONY GAMBOA
+    public void g2_crearFigura6(int tamanioRombo){//Gamboa Anthony
         System.out.println();
-        for(int i= 0; i < tamanoRombo; i++){
-            for(int j = 0; j < tamanoRombo - i -1; j++){
-                System.out.print(" ");
+        for(int i= 0; i < tamanioRombo; i++){
+            for(int j = 0; j < tamanioRombo - i -1; j++){
+                System.out.print("  ");
             }
             for(int k = 0; k < 2 * i + 1; k++){
-                 System.out.print("*");
+                 System.out.print("* ");
             }
                  System.out.println();
             }   
@@ -102,10 +102,10 @@ public class Figuras {
         System.out.println();
     }
 
-    public void g2_crearFigura8(int tamanoEscaleras){//ANTHONY GAMBOA
+    public void g2_crearFigura8(int tamanioEscaleras){//Gamboa Anthony
         System.out.println();
-        for(int i = 0; i < tamanoEscaleras; i++){
-            for(int j = 0; j < tamanoEscaleras - i -1; j++){
+        for(int i = 0; i < tamanioEscaleras; i++){
+            for(int j = 0; j < tamanioEscaleras - i -1; j++){
                 System.out.print("   ");
             }
             System.out.print("__");
@@ -114,22 +114,22 @@ public class Figuras {
         }
     }
 
-    public void g2_crearFigura9(int tamaño){ //Fuentes Carlos
-            for(int i = 0; i < tamaño; i++){
+    public void g2_crearFigura9(int tamanio){ //Fuentes Carlos
+            for(int i = 0; i < tamanio; i++){
                 System.out.print("    ");
             }
-            tamaño--;
+            tamanio--;
             System.out.println("___");
-            for (int i = tamaño; i > 0; i--) {
+            for (int i = tamanio; i > 0; i--) {
                 for (int j = 0; j < i; j++) {
                     System.out.print("    ");
                 }
                     System.out.print("___|");
-                for (int j = 0; j < tamaño - i; j++) {
+                for (int j = 0; j < tamanio - i; j++) {
                     System.out.print("    ");
                 }
                 System.out.print("   ");
-                for (int j = 0; j < tamaño - i; j++) {
+                for (int j = 0; j < tamanio - i; j++) {
                     System.out.print("    ");
                 }
     
@@ -153,10 +153,10 @@ public class Figuras {
                 System.out.println(((" ".repeat(3 + 4*(numero_fila-2))) + "|"));
             }
         }
-        System.out.println();
     }
     
     public void g2_crearFigura11(int tamanio){ //Fuentes Carlos
+        System.out.println();
         System.out.println("|_");
         int aux = 0;
         for (int x = 2; x <= tamanio; x++) {
@@ -170,9 +170,7 @@ public class Figuras {
                 System.out.print("_");
             }
                 System.out.println();
-    
             }
-        System.out.println(); 
     }
     
     public void g2_crearFigura12(int tamanio){ //Mayerli Chavez
@@ -183,11 +181,9 @@ public class Figuras {
             }
             System.out.println("");
         }
-        System.out.println();
     }
 
     public void g2_crearFigura13(int tamanio){ //Mayerli Chavez
-        System.out.println();
             for (int fila = tamanio ; fila >= 0; fila--) {
                 for (int columna = 1; columna <= tamanio - fila; columna++) {
                     System.out.print(columna);
@@ -197,29 +193,28 @@ public class Figuras {
             System.out.println();
     }
     
-    public void g2_crearFigura14(int tamaño){ //Fuentes Carlos
+    public void g2_crearFigura14(int tamanio){ //Fuentes Carlos
         System.out.println();
-        for (int i = 0; i < tamaño; i++) {
+        for (int i = 0; i < tamanio; i++) {
             
-            for (int j = 0; j < tamaño - i - 1; j++) {
-                System.out.print(" ");
+            for (int j = 0; j < tamanio - i - 1; j++) {
+                System.out.print("   ");
             }
     
             int cont = 1;
             for (int j = 0; j <= i; j++) {
-                System.out.print(cont + " ");
+                System.out.print(cont + "  ");
                 cont = cont * (i - j) / (j + 1);
             }
 
             cont = 1;
             for (int j = i; j > 0; j--) {
                 cont = cont * j / (i - j + 1);
-                System.out.print(cont + " ");
+                System.out.print(cont + "  ");
             }
     
                 System.out.println();
         }
-        System.out.println();
     }
 
     public void g2_crearFigura15(int tamanio){ //Chugá Juan
@@ -239,21 +234,18 @@ public class Figuras {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
-    public void g2_crearFigura16(int tamanoCruz){//ANTHONY GAMBOA
+    public void g2_crearFigura16(int tamanioCruz){//Gamboa Anthony
         System.out.println();
-        for(int i = 0; i < tamanoCruz; i++){
-            for(int j = 0; j < tamanoCruz; j++){
-                if((i == j)||( i+ j == tamanoCruz -1)){
+        for(int i = 0; i < tamanioCruz; i++){
+            for(int j = 0; j < tamanioCruz; j++){
+                if((i == j)||( i+ j == tamanioCruz -1)){
                     if(i % 2 == 0){
-                    System.out.print("+");    
+                    System.out.print("+ ");    
                     }else{
-                    System.out.print("-");    
+                    System.out.print("- ");    
                     }
-                    
-                    
                 }else{
                     System.out.print("  ");
                 }  
@@ -279,7 +271,6 @@ public class Figuras {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     public void g2_crearFigura18(int tamanio){ //Chugá Juan
@@ -299,7 +290,6 @@ public class Figuras {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     public void g2_crearFigura19(int tamanio){ //Chugá Juan
@@ -331,7 +321,6 @@ public class Figuras {
             }
             System.out.println();
         }
-        System.out.println();
     }
     
 }

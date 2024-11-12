@@ -12,7 +12,7 @@ public class Recursivo {
         return factorial;
     }
 
-    public  int g2_crearRecursion2(int a, int b){ //ANTHONY GAMBOA
+    public  int g2_crearRecursion2(int a, int b){ //Gamboa Anthony
         if(b==0){
             return a;
         }
@@ -55,7 +55,7 @@ public class Recursivo {
             System.out.println("Cuenta: " + num);
             Thread.sleep(400);
             if(num == limite_superior){
-                System.out.println("Terminó la cuenta.");
+                System.out.println("Termino la cuenta.");
                 return;
             }
             else
@@ -65,12 +65,13 @@ public class Recursivo {
         }
     }
 
-    public  void g2_crearRecursion6(int cont){ //ANTHONY GAMBOA
+    public  void g2_crearRecursion6(int cont){ //Gamboa Anthony
 
         if(cont < 0){
+            System.out.println("\rTermino la cuenta.");
             return;
         }
-        System.out.print("\r" + cont);
+        System.out.print("\rCuenta: " + cont);
 
         try{
             Thread.sleep(1000);
